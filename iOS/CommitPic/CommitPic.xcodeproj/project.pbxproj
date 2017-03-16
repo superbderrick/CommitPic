@@ -12,6 +12,7 @@
 		493261641E7A43350080795D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261621E7A43350080795D /* Main.storyboard */; };
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
+		DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		493261651E7A43350080795D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.release.xcconfig"; sourceTree = "<group>"; };
+		84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.debug.xcconfig"; sourceTree = "<group>"; };
+		A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommitPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				4932615D1E7A43350080795D /* CommitPic */,
 				4932615C1E7A43350080795D /* Products */,
+				91691F9B27238DEA7D1C386A /* Pods */,
+				718342EC5BDF4CF863732D33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = CommitPic;
 			sourceTree = "<group>";
 		};
+		718342EC5BDF4CF863732D33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		91691F9B27238DEA7D1C386A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */,
+				7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4932616D1E7A43350080795D /* Build configuration list for PBXNativeTarget "CommitPic" */;
 			buildPhases = (
+				2A6D6A1C0119DED0B7F47B7C /* [CP] Check Pods Manifest.lock */,
 				493261571E7A43350080795D /* Sources */,
 				493261581E7A43350080795D /* Frameworks */,
 				493261591E7A43350080795D /* Resources */,
+				2759A46A72A70B564F3847FE /* [CP] Embed Pods Frameworks */,
+				EE58B0FF6E5CCDD1F2744E20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2759A46A72A70B564F3847FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A6D6A1C0119DED0B7F47B7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE58B0FF6E5CCDD1F2744E20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		493261571E7A43350080795D /* Sources */ = {
@@ -259,6 +334,7 @@
 		};
 		4932616E1E7A43350080795D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ7M7NUA6A;
@@ -272,6 +348,7 @@
 		};
 		4932616F1E7A43350080795D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ7M7NUA6A;
