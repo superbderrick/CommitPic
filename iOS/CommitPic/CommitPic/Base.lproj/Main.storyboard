@@ -22,16 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-HZ-kic">
-                                <rect key="frame" x="16" y="55" width="343" height="462"/>
+                                <rect key="frame" x="16" y="55" width="343" height="412"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="LFR-3k-TMU">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="203"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="F7S-Au-RZS"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="153"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit PIc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNt-H9-hkn">
-                                        <rect key="frame" x="0.0" y="216" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="166" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8ZV-qm-aCJ"/>
                                         </constraints>
@@ -40,7 +37,7 @@
                                         <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLe-Jy-bgs">
-                                        <rect key="frame" x="0.0" y="269" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="219" width="343" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="THm-9W-4ez"/>
                                         </constraints>
@@ -49,13 +46,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Awn-CB-LDv">
-                                        <rect key="frame" x="0.0" y="315" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="265" width="343" height="33"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7Q-Pd-k0u">
-                                        <rect key="frame" x="0.0" y="361" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="311" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1tu-5c-jf2"/>
                                         </constraints>
@@ -68,7 +65,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9P-4w-7ho" userLabel="OauthLogin">
-                                        <rect key="frame" x="0.0" y="418" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="368" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="38n-3u-0u4"/>
                                         </constraints>
@@ -90,8 +87,8 @@
                         <constraints>
                             <constraint firstItem="UNw-HZ-kic" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="KIv-4b-RZF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UNw-HZ-kic" secondAttribute="trailing" id="L4T-oz-fr6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UNw-HZ-kic" secondAttribute="bottom" constant="200" id="RQP-LP-cqW"/>
                             <constraint firstItem="UNw-HZ-kic" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="krl-WT-dbE" userLabel="Stack View.leading = leadingMargin"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UNw-HZ-kic" secondAttribute="bottom" constant="150" id="qHj-z1-sxM" userLabel="Bottom Layout Guide.top = Stack View.bottom + 20"/>
                         </constraints>
                     </view>
                     <connections>
