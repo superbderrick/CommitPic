@@ -12,6 +12,7 @@
 		493261641E7A43350080795D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261621E7A43350080795D /* Main.storyboard */; };
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
+		49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */; };
 		DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		493261651E7A43350080795D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.release.xcconfig"; sourceTree = "<group>"; };
 		84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.debug.xcconfig"; sourceTree = "<group>"; };
 		A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CommitPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,14 +63,23 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				49DAF5DB1E7D899A007CCDEB /* ViewControllers */,
 				4932615E1E7A43350080795D /* AppDelegate.swift */,
-				493261601E7A43350080795D /* ViewController.swift */,
 				493261621E7A43350080795D /* Main.storyboard */,
 				493261651E7A43350080795D /* Assets.xcassets */,
 				493261671E7A43350080795D /* LaunchScreen.storyboard */,
 				4932616A1E7A43350080795D /* Info.plist */,
 			);
 			path = CommitPic;
+			sourceTree = "<group>";
+		};
+		49DAF5DB1E7D899A007CCDEB /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				493261601E7A43350080795D /* ViewController.swift */,
+				49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		718342EC5BDF4CF863732D33 /* Frameworks */ = {
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */,
 				493261611E7A43350080795D /* ViewController.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 			);
@@ -339,6 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ7M7NUA6A;
 				INFOPLIST_FILE = CommitPic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superbderrick.tistory.com.CommitPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NZ7M7NUA6A;
 				INFOPLIST_FILE = CommitPic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = superbderrick.tistory.com.CommitPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +393,7 @@
 				4932616F1E7A43350080795D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
