@@ -20,9 +20,10 @@ class LoginViewController: UIViewController {
   }
  
   @IBAction func loginPressed(_ sender: Any) {
-    let controller = self.storyboard!.instantiateViewController(withIdentifier: "myTabBarController") as! UITabBarController
-    self.present(controller, animated: true, completion: nil)
-
+    GitHubOAuth.shared.requestAuthenticationWith(parameters: ["scope" : "email,user,repo"])
+//    let controller = self.storyboard!.instantiateViewController(withIdentifier: "myTabBarController") as! UITabBarController
+//    self.present(controller, animated: true, completion: nil)
+//GitHubOAuth.shared.oAuthRequestWith(["scope" : "email,user,repo"])
   }
 
   

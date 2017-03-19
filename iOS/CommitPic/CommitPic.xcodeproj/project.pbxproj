@@ -13,6 +13,8 @@
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
+		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
+		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
 		49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */; };
 		DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */; };
 /* End PBXBuildFile section */
@@ -26,6 +28,8 @@
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
+		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
+		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
 		49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.release.xcconfig"; sourceTree = "<group>"; };
 		84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +69,7 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				49B328AF1E7EC54200DB2AE0 /* Networks */,
 				49DAF5DB1E7D899A007CCDEB /* ViewControllers */,
 				4932615E1E7A43350080795D /* AppDelegate.swift */,
 				493261621E7A43350080795D /* Main.storyboard */,
@@ -73,6 +78,15 @@
 				4932616A1E7A43350080795D /* Info.plist */,
 			);
 			path = CommitPic;
+			sourceTree = "<group>";
+		};
+		49B328AF1E7EC54200DB2AE0 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */,
+				49B328B21E7EC70300DB2AE0 /* Constant.swift */,
+			);
+			name = Networks;
 			sourceTree = "<group>";
 		};
 		49DAF5DB1E7D899A007CCDEB /* ViewControllers */ = {
@@ -109,12 +123,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4932616D1E7A43350080795D /* Build configuration list for PBXNativeTarget "CommitPic" */;
 			buildPhases = (
+				41500549A53B30ACBF9939E0 /* 📦 Check Pods Manifest.lock */,
 				2A6D6A1C0119DED0B7F47B7C /* [CP] Check Pods Manifest.lock */,
 				493261571E7A43350080795D /* Sources */,
 				493261581E7A43350080795D /* Frameworks */,
 				493261591E7A43350080795D /* Resources */,
 				2759A46A72A70B564F3847FE /* [CP] Embed Pods Frameworks */,
 				EE58B0FF6E5CCDD1F2744E20 /* [CP] Copy Pods Resources */,
+				E96B1B8C6456DD1CDB1E8A0E /* 📦 Embed Pods Frameworks */,
+				DA725D93B1E0EB01EB49F27F /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,6 +221,51 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		41500549A53B30ACBF9939E0 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DA725D93B1E0EB01EB49F27F /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E96B1B8C6456DD1CDB1E8A0E /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EE58B0FF6E5CCDD1F2744E20 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,7 +290,9 @@
 			files = (
 				49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */,
 				493261611E7A43350080795D /* ViewController.swift in Sources */,
+				49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */,
 				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
+				49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
