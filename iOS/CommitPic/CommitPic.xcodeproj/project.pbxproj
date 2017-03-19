@@ -12,6 +12,7 @@
 		493261641E7A43350080795D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261621E7A43350080795D /* Main.storyboard */; };
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
+		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
 		49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */; };
 		DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		493261651E7A43350080795D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
 		49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.release.xcconfig"; sourceTree = "<group>"; };
 		84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			children = (
 				493261601E7A43350080795D /* ViewController.swift */,
 				49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */,
+				4972F0161E7E203900139332 /* MainTabbarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */,
 				493261611E7A43350080795D /* ViewController.swift in Sources */,
+				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

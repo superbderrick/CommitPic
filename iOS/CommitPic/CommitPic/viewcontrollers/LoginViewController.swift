@@ -9,5 +9,22 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+  @IBOutlet weak var loginButton: UIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated);
+  }
+ 
+  @IBAction func loginPressed(_ sender: Any) {
+    let controller = self.storyboard!.instantiateViewController(withIdentifier: "myTabBarController") as! UITabBarController
+    self.present(controller, animated: true, completion: nil)
 
+  }
+
+  
+  
 }
