@@ -74,7 +74,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                         <state key="normal" title="OauthLogin">
-                                            <color key="titleColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YLW-Rp-W52"/>
@@ -102,10 +102,10 @@
             </objects>
             <point key="canvasLocation" x="-142" y="110"/>
         </scene>
-        <!--Item 2-->
+        <!--DailyCommit-->
         <scene sceneID="IzF-JF-XSS">
             <objects>
-                <viewController id="Eum-6R-Zhc" sceneMemberID="viewController">
+                <viewController id="Eum-6R-Zhc" userLabel="DailyCommit" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="URN-Rq-Ltr"/>
                         <viewControllerLayoutGuide type="bottom" id="CxC-9V-k4g"/>
@@ -115,16 +115,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="rXz-v2-1NZ"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhv-Zk-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1713" y="753"/>
         </scene>
-        <!--Item 1-->
+        <!--Place-->
+        <scene sceneID="9BA-Gl-S7G">
+            <objects>
+                <viewController id="utP-cP-Bgd" userLabel="Place" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F2s-me-44X"/>
+                        <viewControllerLayoutGuide type="bottom" id="qaO-J3-m0X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OQ3-tc-AAm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic_place_white_36pt" id="KVI-DF-kyv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nJP-bv-91n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-591"/>
+        </scene>
+        <!--Setting-->
         <scene sceneID="rSr-3k-dqv">
             <objects>
-                <viewController id="weS-09-YEM" sceneMemberID="viewController">
+                <viewController id="weS-09-YEM" userLabel="Setting" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zi8-UZ-omU"/>
                         <viewControllerLayoutGuide type="bottom" id="xQr-gK-ikQ"/>
@@ -134,7 +153,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="RwO-5t-xlI"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_settings_applications_36pt" id="RwO-5t-xlI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A93-jY-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,18 +167,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="weS-09-YEM" kind="relationship" relationship="viewControllers" id="JRV-fn-taX"/>
-                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="viewControllers" id="62s-Z5-6hn"/>
+                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="viewControllers" id="c9a-4P-DZb"/>
+                        <segue destination="utP-cP-Bgd" kind="relationship" relationship="viewControllers" id="y4c-M7-fsN"/>
+                        <segue destination="weS-09-YEM" kind="relationship" relationship="viewControllers" id="zdL-ad-cam"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qe-Ol-Yam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="127"/>
+            <point key="canvasLocation" x="748" y="109"/>
         </scene>
     </scenes>
     <resources>
         <image name="Octocat" width="800" height="665"/>
+        <image name="ic_local_activity_36pt" width="36" height="36"/>
+        <image name="ic_place_white_36pt" width="36" height="36"/>
+        <image name="ic_settings_applications_36pt" width="36" height="36"/>
     </resources>
 </document>
