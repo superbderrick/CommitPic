@@ -1,2 +1,3 @@
 # CommitPic
-CommitPic is a photo application to share development records easily and freely.
+CommitPic is a photo application to share development records easily and freely.--
+Oauth2Swift 
