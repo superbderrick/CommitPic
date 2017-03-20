@@ -6,7 +6,7 @@ use_frameworks!
 target "CommitPic" do
   
   pod 'Firebase/Core'
-  # pod 'OAuthSwift', '~> 1.1.0'
+  pod 'OAuthSwift', '~> 1.1.0'
 end
 
 # for swift version dependency. http://stackoverflow.com/questions/37821560/cocoapods-and-# swift-3.0

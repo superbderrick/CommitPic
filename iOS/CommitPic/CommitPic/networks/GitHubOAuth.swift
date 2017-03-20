@@ -22,8 +22,6 @@ class GitHubOAuth {
       parameterString = parameterString.appendingFormat(parameter)
     }
     
-    //let requsest :String = "\(Constants.GitHUBOAuthInfo.OAuthBaseURL) \(Constants.GitHUBParameterKeys)"
-    
     if let requestURL = NSURL(string: "\(Constants.GitHUBOAuthInfo.OAuthBaseURL)authorize?client_id=\(Constants.ConfidentialInfo.GitHubClientID)&scope=\(parameterString)"){
         print(requestURL)
       
