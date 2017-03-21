@@ -12,11 +12,15 @@ struct Constants {
   
   struct GitHUBOAuthInfo {
     static let TokenKey                = "kAccessTokenKey"
-    static let OAuthBaseURL            = "https://github.com/login/oauth/"
-    static let AccessTokenRegexPattern = "access_token=([^&]+)"
+    static let OAuthBaseURL            = "https://github.com/login/oauth/authorize"
+	static let OAuthTokenURL            = "https://github.com/login/oauth/access_token"
+	static let AccessTokenRegexPattern = "access_token=([^&]+)"
   }
-  
-  
+	
+	struct ResponseType {
+		static let CODE = "code"
+	}
+	
   struct ConfidentialInfo {
     static let GitHubClientID = "27d55a14358fac7ff91e"
     static let GitHubClientLicense = "fcabd415740afe91ef9ec8521fcdeeff3debe8ec"

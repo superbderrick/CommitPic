@@ -7,12 +7,28 @@
 //
 
 import UIKit
+import Firebase
+import OAuthSwift
 
-class LoginViewController: UIViewController {
+class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
+  var oauthswift: OAuthSwift?
+	
+	
+	
   
   override func viewDidLoad() {
     super.viewDidLoad()
+	if FIRAuth.auth()?.currentUser != nil {
+		performUIUpdatesOnMain {
+			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
+		}
+		
+	} else {
+		print("N")
+	}
+	
+
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -20,12 +36,22 @@ class LoginViewController: UIViewController {
   }
  
   @IBAction func loginPressed(_ sender: Any) {
-    GitHubOAuth.shared.requestAuthenticationWith(parameters: ["scope" : "email,user,repo"])
-//    let controller = self.storyboard!.instantiateViewController(withIdentifier: "myTabBarController") as! UITabBarController
-//    self.present(controller, animated: true, completion: nil)
-//GitHubOAuth.shared.oAuthRequestWith(["scope" : "email,user,repo"])
+	//	doOAuthGithub();
   }
+
 
   
   
+}
+
+extension LoginViewController {
+	func doOAuthGithub() {
+		let oauthSwift = OAuth2Swift(
+			consumerKey: Constants.ConfidentialInfo.GitHubClientID,
+			consumerSecret: Constants.ConfidentialInfo.GitHubClientLicense,
+			authorizeUrl: Constants.GitHUBOAuthInfo.OAuthBaseURL,
+			accessTokenUrl: Constants.GitHUBOAuthInfo.OAuthTokenURL,
+			responseType: Constants.ResponseType.CODE)
+	}
+	
 }
