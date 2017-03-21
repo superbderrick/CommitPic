@@ -1,8 +1,7 @@
 # CommitPic
-CommitPic is a photo application to share development records easily and freely.--
-With Some Opensource and firebase !
+CommitPic is a photo application to share development records easily and freely with Some Opensource and firebase !
 
-- Networks 
-  oAuthSwift
+- Networks :
+    oAuthSwift
  
  
