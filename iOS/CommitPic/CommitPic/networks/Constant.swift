@@ -11,10 +11,8 @@ import UIKit
 struct Constants {
   
   struct GitHUBOAuthInfo {
-    static let TokenKey                = "kAccessTokenKey"
-    static let OAuthBaseURL            = "https://github.com/login/oauth/authorize"
-	static let OAuthTokenURL            = "https://github.com/login/oauth/access_token"
-	static let AccessTokenRegexPattern = "access_token=([^&]+)"
+    static let OAuthBaseURL             =  "https://github.com/login/oauth/authorize"
+    static let OAuthTokenURL            =  "https://github.com/login/oauth/access_token"
   }
 	
 	struct ResponseType {
@@ -26,14 +24,10 @@ struct Constants {
     static let GitHubClientLicense = "fcabd415740afe91ef9ec8521fcdeeff3debe8ec"
   }
   
-  struct GitHUB {
-    static let APIBaseURL = "https://GitHUB/services/rest/"
+  struct FIREBASEInfo {
+    static let FIREBASE_CALLBACK_ADRESS = "https://commitpic.firebaseapp.com/__/auth/handler"
   }
-  
-  // MARK: GitHUB Parameter Keys
-  struct GitHUBParameterKeys {
-    static let ClientID = "authorize?client_id"
-  }
+
   
   struct GitHUBResponseKeys {
     static let Status = "stat"

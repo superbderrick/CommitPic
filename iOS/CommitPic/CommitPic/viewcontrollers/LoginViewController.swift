@@ -14,6 +14,13 @@ import OAuthSwift
 class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
   var oauthswift: OAuthSwift?
+  
+  lazy var internalWebViewController: WebViewController = {
+    let controller = WebViewController()
+    controller.view = UIView(frame: UIScreen.main.bounds)
+    controller.viewDidLoad()
+    return controller
+  }()
 	
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,30 +29,30 @@ class LoginViewController: OAuthViewController {
       		performUIUpdatesOnMain {
       			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
       		}
+    } else {
+      print("Noting previous trace")
     }
   }
 	
-//  
-//  override func viewDidLoad() {
-//    super.viewDidLoad()
-//	if FIRAuth.auth()?.currentUser != nil {
-//		performUIUpdatesOnMain {
-//			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
-//		}
-//		
-//	} else {
-//		print("N")
-//	}
-	
-
-  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated);
   }
  
   @IBAction func loginPressed(_ sender: Any) {
-	//	doOAuthGithub();
+		doOAuthGithub();
+  }
+  
+  func doOAuthGithub() {
+    let oauthSwift = OAuth2Swift(
+      consumerKey: Constants.ConfidentialInfo.GitHubClientID,
+      consumerSecret: Constants.ConfidentialInfo.GitHubClientLicense,
+      authorizeUrl: Constants.GitHUBOAuthInfo.OAuthBaseURL,
+      accessTokenUrl: Constants.GitHUBOAuthInfo.OAuthTokenURL,
+      responseType: Constants.ResponseType.CODE)
+    
+    self.oauthswift = oauthSwift
+    oauthswift?.authorizeURLHandler = internalWebViewController
   }
 
 
@@ -54,13 +61,6 @@ class LoginViewController: OAuthViewController {
 }
 
 extension LoginViewController {
-	func doOAuthGithub() {
-		let oauthSwift = OAuth2Swift(
-			consumerKey: Constants.ConfidentialInfo.GitHubClientID,
-			consumerSecret: Constants.ConfidentialInfo.GitHubClientLicense,
-			authorizeUrl: Constants.GitHUBOAuthInfo.OAuthBaseURL,
-			accessTokenUrl: Constants.GitHUBOAuthInfo.OAuthTokenURL,
-			responseType: Constants.ResponseType.CODE)
-	}
+	
 	
 }

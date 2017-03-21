@@ -19,16 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
   
-  func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-    print("AppDelegate - OpernURL func URL:\(url)")
-    
-//    GitHubOAuth.shared.tokenRequestWithCallback(url, options: SaveOptions.userDefaults) { (sucess) in
-//      if sucess{
-//        print("We have a token!!")
-//      }
-//    }
-    return true
-  }
+  
 
 	
 
