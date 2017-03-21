@@ -6,6 +6,7 @@ use_frameworks!
 target "CommitPic" do
   
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
   pod 'OAuthSwift', '~> 1.1.0'
 end
 
@@ -17,3 +18,4 @@ post_install do |installer|
     end
   end
 end
+
