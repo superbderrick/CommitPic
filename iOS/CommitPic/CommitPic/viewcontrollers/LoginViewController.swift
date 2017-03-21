@@ -8,28 +8,37 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import OAuthSwift
 
 class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
   var oauthswift: OAuthSwift?
 	
-	
-	
-  
   override func viewDidLoad() {
     super.viewDidLoad()
-	if FIRAuth.auth()?.currentUser != nil {
-		performUIUpdatesOnMain {
-			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
-		}
-		
-	} else {
-		print("N")
-	}
+    
+    if FIRAuth.auth()?.currentUser != nil {
+      		performUIUpdatesOnMain {
+      			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
+      		}
+    }
+  }
+	
+//  
+//  override func viewDidLoad() {
+//    super.viewDidLoad()
+//	if FIRAuth.auth()?.currentUser != nil {
+//		performUIUpdatesOnMain {
+//			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
+//		}
+//		
+//	} else {
+//		print("N")
+//	}
 	
 
-  }
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated);

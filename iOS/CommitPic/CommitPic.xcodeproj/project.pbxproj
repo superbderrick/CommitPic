@@ -12,6 +12,7 @@
 		493261641E7A43350080795D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261621E7A43350080795D /* Main.storyboard */; };
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
+		495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495807241E815147003DDB4C /* GCDBlackBox.swift */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
@@ -27,6 +28,7 @@
 		493261651E7A43350080795D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		495807241E815147003DDB4C /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = util/GCDBlackBox.swift; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				495807261E81514C003DDB4C /* Util */,
 				49B328AF1E7EC54200DB2AE0 /* Networks */,
 				49DAF5DB1E7D899A007CCDEB /* ViewControllers */,
 				4932615E1E7A43350080795D /* AppDelegate.swift */,
@@ -78,6 +81,14 @@
 				4932616A1E7A43350080795D /* Info.plist */,
 			);
 			path = CommitPic;
+			sourceTree = "<group>";
+		};
+		495807261E81514C003DDB4C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				495807241E815147003DDB4C /* GCDBlackBox.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		49B328AF1E7EC54200DB2AE0 /* Networks */ = {
@@ -123,7 +134,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4932616D1E7A43350080795D /* Build configuration list for PBXNativeTarget "CommitPic" */;
 			buildPhases = (
-				41500549A53B30ACBF9939E0 /* 📦 Check Pods Manifest.lock */,
+				41500549A53B30ACBF9939E0 /* [CP] Check Pods Manifest.lock */,
 				2A6D6A1C0119DED0B7F47B7C /* [CP] Check Pods Manifest.lock */,
 				493261571E7A43350080795D /* Sources */,
 				493261581E7A43350080795D /* Frameworks */,
@@ -221,19 +232,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		41500549A53B30ACBF9939E0 /* 📦 Check Pods Manifest.lock */ = {
+		41500549A53B30ACBF9939E0 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DA725D93B1E0EB01EB49F27F /* 📦 Copy Pods Resources */ = {
@@ -294,6 +305,7 @@
 				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
 				49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
+				495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
