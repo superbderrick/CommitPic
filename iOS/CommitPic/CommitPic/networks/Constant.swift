@@ -27,7 +27,10 @@ struct Constants {
   struct FIREBASEInfo {
     static let FIREBASE_CALLBACK_ADRESS = "https://commitpic.firebaseapp.com/__/auth/handler"
   }
-
+	
+  struct GitHUBRequestValue {
+	static let Default = "user,repo"
+  }
   
   struct GitHUBResponseKeys {
     static let Status = "stat"

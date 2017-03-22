@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import OAuthSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -15,13 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		// Override point for customization after application launch.
+		FIRApp.configure()
 		return true
 	}
-  
-  
+	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+		applicationHandle(url: url as URL)
+		return true
+	}
+	
 
 	
 
 }
-
+extension AppDelegate {
+	
+	func applicationHandle(url: URL) {
+		if (url.host == Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS) {
+			OAuthSwift.handle(url: url)
+		} else {
+			// Google provider is the only one with your.bundle.id url schema.
+			OAuthSwift.handle(url: url)
+		}
+	}
+}

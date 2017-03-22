@@ -20,9 +20,24 @@ class WebViewController: OAuthWebViewController {
     self.webView.scalesPageToFit = true
     self.webView.delegate = self
     self.view.addSubview(self.webView)
+	loadAddressURL()
 		
 	}
-  
+	
+	override func handle(_ url: URL) {
+		targetURL = url
+		super.handle(url)
+		self.loadAddressURL()
+	}
+	
+	func loadAddressURL() {
+		guard let url = targetURL else {
+			return
+		}
+		let req = URLRequest(url: url)
+		self.webView.loadRequest(req)
+	}
+	
 }
 
 extension WebViewController: UIWebViewDelegate {
