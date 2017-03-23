@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,17 +117,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qv8-Cd-vPN">
+                                <rect key="frame" x="163" y="318" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="doLogout:" destination="Eum-6R-Zhc" eventType="touchUpInside" id="JrQ-yu-mQ6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
+                    <navigationItem key="navigationItem" id="h2d-nJ-THS"/>
                     <connections>
                         <outlet property="currentStatusButton" destination="q3Q-jA-TCf" id="dzL-J5-tFf"/>
+                        <outlet property="logoutButton" destination="Qv8-Cd-vPN" id="6WO-W3-gnz"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="returnLogin" id="4yA-1W-xF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhv-Zk-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1713" y="753"/>
+            <point key="canvasLocation" x="375" y="827"/>
         </scene>
         <!--Place-->
         <scene sceneID="9BA-Gl-S7G">
@@ -178,7 +188,7 @@
                         <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="viewControllers" id="c9a-4P-DZb"/>
+                        <segue destination="EfH-pe-pIF" kind="relationship" relationship="viewControllers" id="c9a-4P-DZb"/>
                         <segue destination="utP-cP-Bgd" kind="relationship" relationship="viewControllers" id="y4c-M7-fsN"/>
                         <segue destination="weS-09-YEM" kind="relationship" relationship="viewControllers" id="zdL-ad-cam"/>
                     </connections>
@@ -186,6 +196,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qe-Ol-Yam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748" y="109"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mag-Wt-Jma">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EfH-pe-pIF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4em-9u-ofC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="rootViewController" id="xfX-bJ-X4b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aAT-0W-juS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1712.8" y="752.47376311844084"/>
         </scene>
     </scenes>
     <resources>

@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class DailyCommitViewController: UIViewController {
+  @IBOutlet weak var logoutButton: UIButton!
 	@IBOutlet weak var currentStatusButton: UIButton!
 
     override func viewDidLoad() {
@@ -32,6 +33,17 @@ class DailyCommitViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+  
+  @IBAction func doLogout(_ sender: Any) {
+    let firebaseAuth = FIRAuth.auth()
+    do {
+      try firebaseAuth?.signOut()
+      self.performSegue(withIdentifier: "returnLogin", sender: self)
+      print("logged out")
+    } catch let signOutError as NSError {
+      print ("Error signing out: %@", signOutError)
+    }
+  }
 
     /*
     // MARK: - Navigation

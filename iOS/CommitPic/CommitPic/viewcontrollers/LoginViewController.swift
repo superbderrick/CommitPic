@@ -27,6 +27,7 @@ class LoginViewController: OAuthViewController {
     
     if FIRAuth.auth()?.currentUser != nil {
       		performUIUpdatesOnMain {
+            print(FIRAuth.auth()?.currentUser)
       			 self.performSegue(withIdentifier: "authSuccess", sender: self)
       		}
     } else {
