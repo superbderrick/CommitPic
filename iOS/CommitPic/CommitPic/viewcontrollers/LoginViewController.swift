@@ -57,11 +57,9 @@ class LoginViewController: OAuthViewController {
 	  let _ = oauthSwift.authorize(withCallbackURL: Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS
 		, scope: Constants.GitHUBRequestValue.Default, state: state,
 		  success: { credential, response, parameters in
-			print("token: " + credential.oauthToken)
 			let accessToken = credential.oauthToken
 			let credentialFir = FIRGitHubAuthProvider.credential(withToken: accessToken)
-			self.authWithFirebase(credential: credentialFir)
-		},
+			self.authWithFirebase(credential: credentialFir) },
 		  failure:   { error in
 			print(error.description)
 		})
@@ -79,8 +77,7 @@ extension LoginViewController {
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
-			print("Derrick User ID \(user?.displayName)")
-			print("Derrick User ID \(error.debugDescription)")
+			
 			if error != nil {
 				return
 			}

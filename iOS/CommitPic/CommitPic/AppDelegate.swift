@@ -28,10 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
 	
 	func applicationHandle(url: URL) {
-		if (url.host == Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS) {
 			OAuthSwift.handle(url: url)
-		} else {
-			OAuthSwift.handle(url: url)
-		}
 	}
 }

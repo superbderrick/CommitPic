@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		492ED62F1E827BDC0014290A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 492ED62E1E827BDC0014290A /* GoogleService-Info.plist */; };
 		492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED6301E827D350014290A /* DailyCommitViewController.swift */; };
 		4932615F1E7A43350080795D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932615E1E7A43350080795D /* AppDelegate.swift */; };
 		493261611E7A43350080795D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493261601E7A43350080795D /* WebViewController.swift */; };
@@ -15,6 +14,7 @@
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
 		495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495807241E815147003DDB4C /* GCDBlackBox.swift */; };
+		495807281E83EB3C003DDB4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495807271E83EB3C003DDB4C /* GoogleService-Info.plist */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
@@ -23,7 +23,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		492ED62E1E827BDC0014290A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		492ED6301E827D350014290A /* DailyCommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyCommitViewController.swift; path = viewcontrollers/DailyCommitViewController.swift; sourceTree = "<group>"; };
 		4932615B1E7A43350080795D /* CommitPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4932615E1E7A43350080795D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495807241E815147003DDB4C /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = util/GCDBlackBox.swift; sourceTree = "<group>"; };
+		495807271E83EB3C003DDB4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		493261521E7A43350080795D = {
 			isa = PBXGroup;
 			children = (
-				492ED62E1E827BDC0014290A /* GoogleService-Info.plist */,
+				495807271E83EB3C003DDB4C /* GoogleService-Info.plist */,
 				4932615D1E7A43350080795D /* CommitPic */,
 				4932615C1E7A43350080795D /* Products */,
 				91691F9B27238DEA7D1C386A /* Pods */,
@@ -200,7 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */,
-				492ED62F1E827BDC0014290A /* GoogleService-Info.plist in Resources */,
+				495807281E83EB3C003DDB4C /* GoogleService-Info.plist in Resources */,
 				493261661E7A43350080795D /* Assets.xcassets in Resources */,
 				493261641E7A43350080795D /* Main.storyboard in Resources */,
 			);
