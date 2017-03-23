@@ -93,7 +93,7 @@
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="P7Q-Pd-k0u" id="8JP-Wr-7p7"/>
-                        <segue destination="Eum-6R-Zhc" kind="show" identifier="authSuccess" id="LWy-hO-vEr"/>
+                        <segue destination="bxr-wG-h5W" kind="show" identifier="authSuccess" id="Rgd-dn-BP8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -121,6 +121,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
+                    <connections>
+                        <outlet property="currentStatusButton" destination="q3Q-jA-TCf" id="dzL-J5-tFf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhv-Zk-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,7 +194,4 @@
         <image name="ic_place_white_36pt" width="36" height="36"/>
         <image name="ic_settings_applications_36pt" width="36" height="36"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="LWy-hO-vEr"/>
-    </inferredMetricsTieBreakers>
 </document>

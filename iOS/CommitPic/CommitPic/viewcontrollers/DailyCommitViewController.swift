@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class DailyCommitViewController: UIViewController {
+	@IBOutlet weak var currentStatusButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		
+		var statusTitle:String
+		if FIRAuth.auth()?.currentUser != nil {
+			statusTitle = "signed"
+		} else {
+			statusTitle = "WeirdStatus"
+		}
+		
+		
+		currentStatusButton.setTitle(statusTitle, for: UIControlState.normal)
     }
 
     override func didReceiveMemoryWarning() {

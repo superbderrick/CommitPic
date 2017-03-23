@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		FIRApp.configure()
 		return true
@@ -25,8 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 	
 
-	
-
 }
 extension AppDelegate {
 	
@@ -34,7 +31,6 @@ extension AppDelegate {
 		if (url.host == Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS) {
 			OAuthSwift.handle(url: url)
 		} else {
-			// Google provider is the only one with your.bundle.id url schema.
 			OAuthSwift.handle(url: url)
 		}
 	}

@@ -27,10 +27,10 @@ class LoginViewController: OAuthViewController {
     
     if FIRAuth.auth()?.currentUser != nil {
       		performUIUpdatesOnMain {
-      			 print((FIRAuth.auth()?.currentUser?.displayName)! as String)
+      			 self.performSegue(withIdentifier: "authSuccess", sender: self)
       		}
     } else {
-      print("Noting previous trace")
+      print("Derrick Noting previous trace")
     }
   }
 	
@@ -50,7 +50,7 @@ class LoginViewController: OAuthViewController {
       authorizeUrl: Constants.GitHUBOAuthInfo.OAuthBaseURL,
       accessTokenUrl: Constants.GitHUBOAuthInfo.OAuthTokenURL,
       responseType: Constants.ResponseType.CODE)
-    
+	
 	  self.oauthswift = oauthSwift
 	  oauthswift?.authorizeURLHandler = internalWebViewController
 	  let state = generateState(withLength: 20)
@@ -69,15 +69,18 @@ class LoginViewController: OAuthViewController {
   }
  
 
-
+	
 	
 	
 }
 
 extension LoginViewController {
 	func authWithFirebase(credential: FIRAuthCredential) {
+		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
+			print("Derrick User ID \(user?.displayName)")
+			print("Derrick User ID \(error.debugDescription)")
 			if error != nil {
 				return
 			}

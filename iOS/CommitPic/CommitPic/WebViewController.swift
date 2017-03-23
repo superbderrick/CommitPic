@@ -46,6 +46,7 @@ extension WebViewController: UIWebViewDelegate {
     let urlString = request.url!.absoluteString
     let redirectUri = Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS
     if let _ =  urlString.range(of: "\(redirectUri)?code=") {
+      print("URL \(request.url)")
       OAuthSwift.handle(url: request.url!)
       self.dismissWebViewController()
     }
