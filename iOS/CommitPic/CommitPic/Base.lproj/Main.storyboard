@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,13 +22,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="UNw-HZ-kic">
-                                <rect key="frame" x="16" y="55" width="343" height="412"/>
+                                <rect key="frame" x="16" y="99" width="343" height="319"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="LFR-3k-TMU">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="153"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit PIc" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wNt-H9-hkn">
-                                        <rect key="frame" x="0.0" y="166" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="73" width="343" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="8ZV-qm-aCJ"/>
                                         </constraints>
@@ -37,7 +37,7 @@
                                         <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VLe-Jy-bgs">
-                                        <rect key="frame" x="0.0" y="219" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="126" width="343" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="33" id="THm-9W-4ez"/>
                                         </constraints>
@@ -46,13 +46,13 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Awn-CB-LDv">
-                                        <rect key="frame" x="0.0" y="265" width="343" height="33"/>
+                                        <rect key="frame" x="0.0" y="172" width="343" height="33"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P7Q-Pd-k0u">
-                                        <rect key="frame" x="0.0" y="311" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="218" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="1tu-5c-jf2"/>
                                         </constraints>
@@ -65,7 +65,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9P-4w-7ho" userLabel="OauthLogin">
-                                        <rect key="frame" x="0.0" y="368" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="275" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="38n-3u-0u4"/>
                                         </constraints>
@@ -142,16 +142,22 @@
         <!--Place-->
         <scene sceneID="9BA-Gl-S7G">
             <objects>
-                <viewController id="utP-cP-Bgd" userLabel="Place" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="F2s-me-44X"/>
-                        <viewControllerLayoutGuide type="bottom" id="qaO-J3-m0X"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OQ3-tc-AAm" customClass="vi">
+                <viewController id="utP-cP-Bgd" userLabel="Place" customClass="ActiviyTableViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fgl-Id-Mt4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MIc-cx-s80" customClass="ActivityTableViewCell" customModule="CommitPic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MIc-cx-s80" id="L2o-rd-E6p">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="" image="ic_place_white_36pt" id="KVI-DF-kyv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJP-bv-91n" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -200,7 +206,7 @@
         <!--Navigation Controller-->
         <scene sceneID="mag-Wt-Jma">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EfH-pe-pIF" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EfH-pe-pIF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4em-9u-ofC">

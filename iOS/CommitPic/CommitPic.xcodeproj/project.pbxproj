@@ -14,10 +14,12 @@
 		493261661E7A43350080795D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 493261651E7A43350080795D /* Assets.xcassets */; };
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
 		495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495807241E815147003DDB4C /* GCDBlackBox.swift */; };
-		495807281E83EB3C003DDB4C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 495807271E83EB3C003DDB4C /* GoogleService-Info.plist */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
+		49CAEB1E1E84990A0061FDCD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49CAEB1D1E84990A0061FDCD /* GoogleService-Info.plist */; };
+		49CAEB201E849A000061FDCD /* ActiviyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAEB1F1E849A000061FDCD /* ActiviyTableViewController.swift */; };
+		49CAEB241E849A5E0061FDCD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAEB231E849A5E0061FDCD /* ActivityTableViewCell.swift */; };
 		49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */; };
 		DC540A43A7C7B9F75BFC1F1C /* Pods_CommitPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A300B9DC6B5652BBF7FA2D73 /* Pods_CommitPic.framework */; };
 /* End PBXBuildFile section */
@@ -32,10 +34,12 @@
 		493261681E7A43350080795D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495807241E815147003DDB4C /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = util/GCDBlackBox.swift; sourceTree = "<group>"; };
-		495807271E83EB3C003DDB4C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
+		49CAEB1D1E84990A0061FDCD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49CAEB1F1E849A000061FDCD /* ActiviyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActiviyTableViewController.swift; path = viewcontrollers/ActiviyTableViewController.swift; sourceTree = "<group>"; };
+		49CAEB231E849A5E0061FDCD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = viewcontrollers/LoginViewController.swift; sourceTree = "<group>"; };
 		7F49932489F8ED9620FE4A00 /* Pods-CommitPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.release.xcconfig"; sourceTree = "<group>"; };
 		84EFE58A2AD4E1B3F6CBC690 /* Pods-CommitPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommitPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommitPic/Pods-CommitPic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 		493261521E7A43350080795D = {
 			isa = PBXGroup;
 			children = (
-				495807271E83EB3C003DDB4C /* GoogleService-Info.plist */,
+				49CAEB1D1E84990A0061FDCD /* GoogleService-Info.plist */,
 				4932615D1E7A43350080795D /* CommitPic */,
 				4932615C1E7A43350080795D /* Products */,
 				91691F9B27238DEA7D1C386A /* Pods */,
@@ -76,6 +80,8 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				49CAEB221E849A340061FDCD /* UI */,
+				49CAEB211E849A0A0061FDCD /* Model */,
 				495807261E81514C003DDB4C /* Util */,
 				49B328AF1E7EC54200DB2AE0 /* Networks */,
 				49DAF5DB1E7D899A007CCDEB /* ViewControllers */,
@@ -105,6 +111,21 @@
 			name = Networks;
 			sourceTree = "<group>";
 		};
+		49CAEB211E849A0A0061FDCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		49CAEB221E849A340061FDCD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				49CAEB231E849A5E0061FDCD /* ActivityTableViewCell.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		49DAF5DB1E7D899A007CCDEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +133,7 @@
 				49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */,
 				4972F0161E7E203900139332 /* MainTabbarController.swift */,
 				492ED6301E827D350014290A /* DailyCommitViewController.swift */,
+				49CAEB1F1E849A000061FDCD /* ActiviyTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */,
-				495807281E83EB3C003DDB4C /* GoogleService-Info.plist in Resources */,
+				49CAEB1E1E84990A0061FDCD /* GoogleService-Info.plist in Resources */,
 				493261661E7A43350080795D /* Assets.xcassets in Resources */,
 				493261641E7A43350080795D /* Main.storyboard in Resources */,
 			);
@@ -307,6 +329,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */,
+				49CAEB201E849A000061FDCD /* ActiviyTableViewController.swift in Sources */,
+				49CAEB241E849A5E0061FDCD /* ActivityTableViewCell.swift in Sources */,
 				493261611E7A43350080795D /* WebViewController.swift in Sources */,
 				49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */,
 				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
