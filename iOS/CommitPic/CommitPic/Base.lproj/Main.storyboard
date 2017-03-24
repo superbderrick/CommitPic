@@ -154,6 +154,30 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MIc-cx-s80" id="L2o-rd-E6p">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="ic_add_location" translatesAutoresizingMaskIntoConstraints="NO" id="djF-Li-LTU">
+                                            <rect key="frame" x="5" y="5" width="30" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="128" id="BpR-vD-DGf" userLabel="height = 30"/>
+                                                <constraint firstAttribute="width" constant="240" id="Rao-ZW-qqd" userLabel="width = 30"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prgramming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghq-PA-oDi">
+                                            <rect key="frame" x="40" y="10" width="98" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.61391632249999994" green="1" blue="0.3244265777" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prgramming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OaM-G7-cbl">
+                                            <rect key="frame" x="256" y="8" width="98" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.61391632249999994" green="1" blue="0.3244265777" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.44065738339999999" green="0.44065738339999999" blue="0.44065738339999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -225,6 +249,7 @@
     </scenes>
     <resources>
         <image name="Octocat" width="800" height="665"/>
+        <image name="ic_add_location" width="24" height="24"/>
         <image name="ic_local_activity_36pt" width="36" height="36"/>
         <image name="ic_place_white_36pt" width="36" height="36"/>
         <image name="ic_settings_applications_36pt" width="36" height="36"/>
