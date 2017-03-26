@@ -39,6 +39,8 @@ class DailyCommitViewController: UIViewController {
     do {
       try firebaseAuth?.signOut()
       self.performSegue(withIdentifier: "returnLogin", sender: self)
+       //self.tabBarController?.tabBar.isHidden = true
+      self.tabBarController?.tabBar.isHidden = true
       print("logged out")
     } catch let signOutError as NSError {
       print ("Error signing out: %@", signOutError)
