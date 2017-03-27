@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import OAuthSwift
+import PKHUD
 
 class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
@@ -27,7 +28,6 @@ class LoginViewController: OAuthViewController {
     
     if FIRAuth.auth()?.currentUser != nil {
       		performUIUpdatesOnMain {
-            print(FIRAuth.auth()?.currentUser)
       			 self.performSegue(withIdentifier: "authSuccess", sender: self)
       		}
     } else {
@@ -60,7 +60,10 @@ class LoginViewController: OAuthViewController {
 		  success: { credential, response, parameters in
 			let accessToken = credential.oauthToken
 			let credentialFir = FIRGitHubAuthProvider.credential(withToken: accessToken)
-			self.authWithFirebase(credential: credentialFir) },
+			self.authWithFirebase(credential: credentialFir)
+			PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+			PKHUD.sharedHUD.show()
+		},
 		  failure:   { error in
 			print(error.description)
 		})
@@ -77,8 +80,8 @@ extension LoginViewController {
 	func authWithFirebase(credential: FIRAuthCredential) {
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+			PKHUD.sharedHUD.hide()
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
-			
 			if error != nil {
 				return
 			}

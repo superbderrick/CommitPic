@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -112,7 +112,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MIc-cx-s80" id="L2o-rd-E6p">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_add_location" translatesAutoresizingMaskIntoConstraints="NO" id="djF-Li-LTU" userLabel="titleIcon">
@@ -243,10 +243,10 @@
             </objects>
             <point key="canvasLocation" x="1712.8" y="-591.45427286356824"/>
         </scene>
-        <!--Setting-->
+        <!--ActivityRecord-->
         <scene sceneID="rSr-3k-dqv">
             <objects>
-                <viewController id="weS-09-YEM" userLabel="Setting" sceneMemberID="viewController">
+                <viewController id="weS-09-YEM" userLabel="ActivityRecord" customClass="ActivityViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zi8-UZ-omU"/>
                         <viewControllerLayoutGuide type="bottom" id="xQr-gK-ikQ"/>
@@ -254,9 +254,47 @@
                     <view key="view" contentMode="scaleToFill" id="C4w-uq-zb4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uwP-6F-MDp" userLabel="daily,weekly,monthly">
+                                <rect key="frame" x="-2" y="64" width="379" height="29"/>
+                                <segments>
+                                    <segment title="Daily"/>
+                                    <segment title="Weekly"/>
+                                    <segment title="monthly"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oqQ-3e-AWF">
+                                <rect key="frame" x="-2" y="92" width="379" height="575"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityViewCell" rowHeight="158" id="nRD-4f-lLm" customClass="ActivityTableViewCell" customModule="CommitPic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="379" height="158"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRD-4f-lLm" id="oJP-Jr-k7l">
+                                            <rect key="frame" x="0.0" y="0.0" width="379" height="157"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.37656326002261464" blue="0.30891278665703314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="uwP-6F-MDp" secondAttribute="trailing" constant="-18" id="7ac-qK-hft"/>
+                            <constraint firstAttribute="trailing" secondItem="oqQ-3e-AWF" secondAttribute="trailing" id="LpM-ms-Zgt"/>
+                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="top" secondItem="uwP-6F-MDp" secondAttribute="bottom" constant="8" symbolic="YES" id="Tdg-dB-nOu"/>
+                            <constraint firstItem="uwP-6F-MDp" firstAttribute="top" secondItem="zi8-UZ-omU" secondAttribute="bottom" id="bj7-SL-gT0"/>
+                            <constraint firstItem="uwP-6F-MDp" firstAttribute="leading" secondItem="C4w-uq-zb4" secondAttribute="leadingMargin" constant="-18" id="ojR-nL-FYh"/>
+                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="leading" secondItem="C4w-uq-zb4" secondAttribute="leading" id="owv-cB-Lde"/>
+                            <constraint firstItem="xQr-gK-ikQ" firstAttribute="top" secondItem="oqQ-3e-AWF" secondAttribute="bottom" id="xgj-7r-3Qb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_settings_applications_36pt" id="RwO-5t-xlI"/>
+                    <connections>
+                        <outlet property="activityTableView" destination="oqQ-3e-AWF" id="sDG-oH-Kjv"/>
+                        <outlet property="dateSegment" destination="uwP-6F-MDp" id="jCs-OV-o7a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A93-jY-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
