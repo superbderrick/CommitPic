@@ -7,15 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
 class CommitMaker: NSObject {
 	
 	var commits = [Commit]()
-	
+	var ref: FIRDatabaseReference!
 	override init() {
 		super.init()
+    
+    
 		self.inserTestDATA()
 	}
+  
+  private func getCommitData() {
+    
+  }
 	
 	private func inserTestDATA () {
 		for i in 0..<3 {
