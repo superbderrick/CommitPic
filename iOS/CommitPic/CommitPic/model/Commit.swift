@@ -10,23 +10,23 @@ import UIKit
 
 class Commit: NSObject {
 	
-	var basicPhoto:UIImage!
+	var basicPhoto:UIImage = UIImage(named:"Octocat")!
 	var basicTitle:String = ""
 	
 	var date:String = ""
 	var detailComment:String = ""
 	
 	var totalTime:String = ""
-	var totalTimePhoto:UIImage!
+	var totalTimePhoto:UIImage  = UIImage(named:"Octocat")!
 	
 	var languageType:String = ""
-	var languageTypePhoto:UIImage!
+	var languageTypePhoto:UIImage  = UIImage(named:"Octocat")!
 	
-	var commitNum:Int
-	var commitPhoto:UIImage!
+	var commitNum:Int!
+	var commitPhoto:UIImage =  UIImage(named:"Octocat")!
 	
 	var repoName:String = ""
-	var repoPhoto:UIImage!
+	var repoPhoto:UIImage = UIImage(named:"Octocat")!
 	
 	
 	init?(basicPhoto:  UIImage!, basicTitle: String, date:String,

@@ -15,6 +15,7 @@
 		493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 493261671E7A43350080795D /* LaunchScreen.storyboard */; };
 		495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495807241E815147003DDB4C /* GCDBlackBox.swift */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
+		498AB4C11E89E3B800D228EC /* CommitMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AB4C01E89E3B800D228EC /* CommitMaker.swift */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
 		49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */; };
@@ -36,6 +37,7 @@
 		4932616A1E7A43350080795D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495807241E815147003DDB4C /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = util/GCDBlackBox.swift; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
+		498AB4C01E89E3B800D228EC /* CommitMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitMaker.swift; path = networks/CommitMaker.swift; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
 		49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = viewcontrollers/ActivityViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */,
 				49B328B21E7EC70300DB2AE0 /* Constant.swift */,
+				498AB4C01E89E3B800D228EC /* CommitMaker.swift */,
 			);
 			name = Networks;
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				49CAEB241E849A5E0061FDCD /* ActivityTableViewCell.swift in Sources */,
 				493261611E7A43350080795D /* WebViewController.swift in Sources */,
 				49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */,
+				498AB4C11E89E3B800D228EC /* CommitMaker.swift in Sources */,
 				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
 				49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */,
 				492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */,

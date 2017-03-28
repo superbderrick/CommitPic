@@ -9,38 +9,31 @@
 import UIKit
 
 class ActivityViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
-	@IBOutlet weak var dateSegment: UISegmentedControl!
 	
+	@IBOutlet weak var dateSegment: UISegmentedControl!
 	@IBOutlet weak var activityTableView: UITableView!
+	
+	
 	var commits = [Commit]()
+	var commitMaker:CommitMaker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		inserTestDATA()
-		
 		self.activityTableView.dataSource = self
 		self.activityTableView.delegate = self
+		
+		
+		commitMaker = CommitMaker()
+		commits = commitMaker.getCommitInformation()
+		
+	
 		performUIUpdatesOnMain {
-			
 			self.activityTableView.reloadData()
 		}
 		
     }
 	
-	func inserTestDATA () {
-		for i in 0..<3 {
-			print("(i)")
-			let testImage = UIImage(named:"Octocat")
-			let testString = "Hello"
-			
-			let commit = Commit(basicPhoto: testImage,basicTitle: testString,date: testString ,
-			                    detailComment: testString , totalTime: testString , totalTimePhoto: testImage ,
-			                    languageType: testString,languageTypePhoto: testImage ,commitNum:  (i) , commitPhoto: testImage ,repoName: testString ,repoPhoto: testImage)
-			commits.append(commit!)
-		}
-		
-	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
