@@ -14,6 +14,10 @@ struct Constants {
     static let OAuthBaseURL             =  "https://github.com/login/oauth/authorize"
     static let OAuthTokenURL            =  "https://github.com/login/oauth/access_token"
   }
+  
+  struct GitHub {
+    static let BASE_API_URL = "https://api.github.com/"
+  }
 	
 	struct ResponseType {
 		static let CODE = "code"
@@ -29,7 +33,8 @@ struct Constants {
   }
 	
   struct GitHUBRequestValue {
-	static let Default = "user,repo"
+	static let Default = "events"
+  static let TEST = "users/superbderrick/events"
   }
   
   struct GitHUBResponseKeys {
