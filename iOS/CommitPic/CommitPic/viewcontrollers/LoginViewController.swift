@@ -46,17 +46,17 @@ class LoginViewController: OAuthViewController {
   
   func doOAuthGithub() {
     let oauthSwift = OAuth2Swift(
-      consumerKey: Constants.ConfidentialInfo.GitHubClientID,
-      consumerSecret: Constants.ConfidentialInfo.GitHubClientLicense,
-      authorizeUrl: Constants.GitHUBOAuthInfo.OAuthBaseURL,
-      accessTokenUrl: Constants.GitHUBOAuthInfo.OAuthTokenURL,
+      consumerKey: Constants.GithubConfidentialInfo.GitHubClientID,
+      consumerSecret: Constants.GithubConfidentialInfo.GitHubClientLicense,
+      authorizeUrl: Constants.GithubOAuthInfo.OAuthBaseURL,
+      accessTokenUrl: Constants.GithubOAuthInfo.OAuthTokenURL,
       responseType: Constants.ResponseType.CODE)
 	
 	  self.oauthswift = oauthSwift
 	  oauthswift?.authorizeURLHandler = internalWebViewController
 	  let state = generateState(withLength: 20)
 	  let _ = oauthSwift.authorize(withCallbackURL: Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS
-		, scope: Constants.GitHUBRequestValue.Default, state: state,
+		, scope: Constants.GithubRequestValue.Default, state: state,
 		  success: { credential, response, parameters in
 			let accessToken = credential.oauthToken
 			let credentialFir = FIRGitHubAuthProvider.credential(withToken: accessToken)

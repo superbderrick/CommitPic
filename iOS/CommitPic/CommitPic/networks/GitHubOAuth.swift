@@ -22,7 +22,7 @@ class GitHubOAuth {
       parameterString = parameterString.appendingFormat(parameter)
     }
     
-    if let requestURL = NSURL(string: "\(Constants.GitHUBOAuthInfo.OAuthBaseURL)authorize?client_id=\(Constants.ConfidentialInfo.GitHubClientID)&scope=\(parameterString)"){
+    if let requestURL = NSURL(string: "\(Constants.GithubOAuthInfo.OAuthBaseURL)authorize?client_id=\(Constants.GithubConfidentialInfo.GitHubClientID)&scope=\(parameterString)"){
         print(requestURL)
       
       UIApplication.shared.openURL(requestURL as URL)

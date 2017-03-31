@@ -12,59 +12,171 @@ import Firebase
 class CommitMaker: NSObject {
   
   var commits = [Commit]()
+	
+  var commitInformationArray = [CommitInformation]()
+	
   override init() {
     super.init()
     
     self.getCommitData()
-    //self.inserTestDATA()
+	
   }
   
   private func getCommitData() {
+	
     let session = URLSession.shared
-    let urlString = Constants.GitHub.BASE_API_URL + Constants.GitHUBRequestValue.TEST
+    let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
     let url = URL(string:urlString)!
     let request = URLRequest(url:url)
     
     let task = session.dataTask(with: request) {
       (data , response , error) in
-      
-      func showError(_ error:String) {
-        print("Derrick : Test \(error)")
-      }
-      
-      guard let statusCode = (response as? HTTPURLResponse)?.statusCode , statusCode >= 200 && statusCode <= 299 else {
-        print("Derrick : response  \(error)")
+		
+      guard let statusCode = (response as? HTTPURLResponse)?.statusCode , statusCode >= Constants.GithubResponseStatus.OKStatus && statusCode <= Constants.GithubResponseStatus.ErrorStatus else {
+		print("respone Error  \(error)")
         return
       }
       
       guard let data =  data else {
-        print("Derrick data error")
+        print("faiuler of data creation  error")
         return
       }
+		
       do {
           let userEventsArray = try JSONSerialization.jsonObject(with: data) as? [[String:Any]]
         
-          for dict in userEventsArray! {
+          for event in userEventsArray! {
           
-            let test = dict["type"] as! String
+            let evenType = event["type"] as! String
             
-          if test == "PushEvent" {
-              print(dict["created_at"])
-          }
-          
+				if evenType == Constants.EventType.PushEvent {
+					
+					let pushTime = event["created_at"] as! String
+					let repoDic = event["repo"] as! NSDictionary
+					let repoURL = repoDic["url"] as! String
+				
+					let payloadDic = event["payload"] as! NSDictionary
+					let commitDic = payloadDic["commits"] as! [[String:Any]]
+				
+					let urlDic = commitDic[0] as NSDictionary
+					let finalPayUrl = urlDic["url"] as! String
+				
+					let commitInformation = CommitInformation(pushTime:pushTime , repoURL: repoURL , payload:finalPayUrl)
+					self.commitInformationArray.append(commitInformation)
+			}
         }
+		
+		for event in self.commitInformationArray {
+			print(event.pushTime)
+			print(event.repo)
+			print(event.payload)
+		}
+		
+			self.secondParsing(dataArray: self.commitInformationArray)
+			print("3")
         
       } catch {
         print("Creat json error")
       }
-      
-      
-      
+		
     }
     task.resume()
-    
+		print("GetDataComplete ")
+
   }
-  
+	
+	private func thirdParsing(dataArray:[CommitInformation]) {
+		//Debug
+		for commit in dataArray {
+			
+			let session = URLSession.shared
+			let urlString = commit.payload
+			let url = URL(string:urlString!)
+			let request = URLRequest(url:url!)
+			
+			let task = session.dataTask(with: request) {
+				(data , response , error) in
+				
+				guard let statusCode = (response as? HTTPURLResponse)?.statusCode , statusCode >= Constants.GithubResponseStatus.OKStatus && statusCode <= Constants.GithubResponseStatus.ErrorStatus else {
+					print("respone Error  \(error)")
+					return
+				}
+				
+				guard let data =  data else {
+					print("faiuler of data creation  error")
+					return
+				}
+				
+				do {
+					let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+					let statDic :NSDictionary = json["stats"] as! NSDictionary
+					print(statDic["total"] as! Int)
+					print(statDic["additions"] as! Int)
+					print(statDic["deletions"] as! Int)
+//					total": 82,
+//					"additions": 59,
+//					"deletions": 23
+					
+					
+				} catch {
+					print("Creat json error")
+				}
+				
+			}
+			task.resume()
+		}
+	}
+
+	
+	
+	private func secondParsing(dataArray:[CommitInformation]) {
+		//Debug
+		var count = 0
+		for commit in dataArray {
+			
+			let session = URLSession.shared
+			let urlString = commit.repo
+			let url = URL(string:urlString!)
+			let request = URLRequest(url:url!)
+			
+			let task = session.dataTask(with: request) {
+				(data , response , error) in
+				
+				guard let statusCode = (response as? HTTPURLResponse)?.statusCode , statusCode >= Constants.GithubResponseStatus.OKStatus && statusCode <= Constants.GithubResponseStatus.ErrorStatus else {
+					print("respone Error  \(error)")
+					return
+				}
+				
+				guard let data =  data else {
+					print("faiuler of data creation  error")
+					return
+				}
+				
+				do {
+					let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+					print(json["language"] as! String)
+				} catch {
+					print("Creat json error")
+				}
+				count += 1
+				print("4 \(count)")
+				
+				if(dataArray.count == count) {
+					print("Start")
+					self.thirdParsing(dataArray: self.commitInformationArray)
+				}
+				
+				
+			}
+			print("5")
+			task.resume()
+			
+			//self.thirdParsing(dataArray:self.commitInformationArray)
+		}
+		
+		
+	}
+	
   private func inserTestDATA () {
     for i in 0..<3 {
       print("(i)")
@@ -80,7 +192,7 @@ class CommitMaker: NSObject {
     
   }
   
-	 func getCommitInformation() -> [Commit]{
+  func getCommitInformation() -> [Commit]{
     
     return self.commits
   }
