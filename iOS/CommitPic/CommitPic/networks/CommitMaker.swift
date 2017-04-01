@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Alamofire
+import SwiftyJSON
 
 class CommitMaker: NSObject {
   
@@ -18,8 +20,51 @@ class CommitMaker: NSObject {
   override init() {
     super.init()
     
-    self.getCommitData()
-	
+    //self.getCommitData()
+	  self.withAlmo()
+  }
+  private func withAlmo() {
+     let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
+    
+    Alamofire.request(urlString, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil)
+      .responseJSON { response in
+        
+        if response.data != nil {
+          let json = JSON(data: response.data!)
+          
+          for index in 0...json.count-1 {
+            
+            var test = json[index]["type"].stringValue
+            print(test)
+          }
+//          for (index,subJson):(String, JSON) in json {
+//            
+//          }
+          
+//          for i in 0..<json.count {
+//            let evenType = json["type"] as! String
+//            
+//            if eventType == Constants.EventType.PushEvent {
+//              print(eventType)
+//            }
+//            
+//            
+//          }
+
+          
+
+          
+
+          
+        } else {
+          print(response.error!)
+        }
+        
+        
+        
+    }
+          
+     
   }
   
   private func getCommitData() {
