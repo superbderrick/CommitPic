@@ -10,6 +10,8 @@ target "CommitPic" do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   
+  #Networkds
+  pod 'Alamofire', '~> 4.4'
   #AUTH
   pod 'OAuthSwift', '~> 1.1.0'
   

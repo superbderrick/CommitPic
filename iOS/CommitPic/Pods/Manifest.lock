@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.4.0)
   - Firebase/Auth (3.15.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -36,6 +37,7 @@ PODS:
   - PKHUD (4.2.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 4.4)
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -43,6 +45,7 @@ DEPENDENCIES:
   - PKHUD (~> 4.0)
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Firebase: 2b1cdfba1cda8589f32904a697cc753322bff9d8
   FirebaseAnalytics: 0d1b7d81d5021155be37702a94ba1ec16d45365d
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -54,6 +57,6 @@ SPEC CHECKSUMS:
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
 
-PODFILE CHECKSUM: 5108ac211240d03bc6e9eea5eea3b50015f10a54
+PODFILE CHECKSUM: 122beafff5c89935c32fc6c20e1713988c6ec0e0
 
 COCOAPODS: 1.2.0
