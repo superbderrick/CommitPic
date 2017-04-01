@@ -23,6 +23,7 @@ class CommitMaker: NSObject {
   }
   
   private func getCommitData() {
+    
 	
     let session = URLSession.shared
     let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST

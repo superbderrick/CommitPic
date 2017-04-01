@@ -35,6 +35,17 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
   - OAuthSwift (1.1.1)
   - PKHUD (4.2.0)
+  - PromiseKit (4.1.7):
+    - PromiseKit/Foundation (= 4.1.7)
+    - PromiseKit/QuartzCore (= 4.1.7)
+    - PromiseKit/UIKit (= 4.1.7)
+  - PromiseKit/CorePromise (4.1.7)
+  - PromiseKit/Foundation (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.1.7):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.1.7):
+    - PromiseKit/CorePromise
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -43,6 +54,7 @@ DEPENDENCIES:
   - Firebase/Database
   - OAuthSwift (~> 1.1.0)
   - PKHUD (~> 4.0)
+  - PromiseKit (~> 4.0)
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -56,7 +68,8 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
 
-PODFILE CHECKSUM: 122beafff5c89935c32fc6c20e1713988c6ec0e0
+PODFILE CHECKSUM: a6746746d89586429e0cbec724aaa432addc9513
 
 COCOAPODS: 1.2.0

@@ -17,6 +17,10 @@ target "CommitPic" do
   
   #UI
   pod 'PKHUD', '~> 4.0'
+  
+  #Util
+  pod "PromiseKit", "~> 4.0"
+  
 end
 
 # for swift version dependency. http://stackoverflow.com/questions/37821560/cocoapods-and-# swift-3.0
