@@ -46,6 +46,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -55,6 +56,7 @@ DEPENDENCIES:
   - OAuthSwift (~> 1.1.0)
   - PKHUD (~> 4.0)
   - PromiseKit (~> 4.0)
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
@@ -69,7 +71,8 @@ SPEC CHECKSUMS:
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: a6746746d89586429e0cbec724aaa432addc9513
+PODFILE CHECKSUM: 0cfd9cd70e454adda971b81df701b1df708733b0
 
 COCOAPODS: 1.2.0
