@@ -20,8 +20,10 @@ class CommitMaker: NSObject {
   override init() {
     super.init()
     
-    //self.getCommitData()
-	  self.withAlmo()
+    //==self.getCommitData()
+  self.withAlmo()
+    
+   
   }
   private func withAlmo() {
      let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
@@ -42,30 +44,25 @@ class CommitMaker: NSObject {
               let payloadDic = json[index]["payload"].dictionary!
               let commitDic = payloadDic["commits"]?.array
               let urlDic = commitDic?[0].dictionary!
-              let finalUrl = urlDic?["url"]?.stringValue
+              let finalPayUrl = urlDic?["url"]?.stringValue
+              let requestInformation = CommitInformation(pushTime:pushTime , repoURL:repoURL! , payload:finalPayUrl!)
               
-              print(pushTime)
-              print(repoURL)
-              print(finalUrl)
-//
-//              let payloadDic = event["payload"] as! NSDictionary
-//              let commitDic = payloadDic["commits"] as! [[String:Any]]
-//              
-//              let urlDic = commitDic[0] as NSDictionary
-//              let finalPayUrl = urlDic["url"] as! String
-//              
-//              let commitInformation = CommitInformation(pushTime:pushTime , repoURL: repoURL , payload:finalPayUrl)
-//              self.commitInformationArray.append(commitInformation)
+              let (pTime , detailString) = TimeCalculator.getTimeInformation(pushTime: pushTime)
+              
+              self.commitInformationArray.append(requestInformation)
               
             }
+          }
+          
+          for information in self.commitInformationArray {
+//            print(information.pushTime)
+//            print(information.repo)
+//            print(information.payload)
           }
 
         } else {
           print(response.error!)
         }
-        
-        
-        
     }
           
      

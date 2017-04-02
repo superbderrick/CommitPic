@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4929C8311E90B26600C863C0 /* TimeCalculator.swift */; };
 		492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED6301E827D350014290A /* DailyCommitViewController.swift */; };
 		4932615F1E7A43350080795D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932615E1E7A43350080795D /* AppDelegate.swift */; };
 		493261611E7A43350080795D /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493261601E7A43350080795D /* WebViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4929C8311E90B26600C863C0 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCalculator.swift; path = helper/TimeCalculator.swift; sourceTree = "<group>"; };
 		492ED6301E827D350014290A /* DailyCommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyCommitViewController.swift; path = viewcontrollers/DailyCommitViewController.swift; sourceTree = "<group>"; };
 		4932615B1E7A43350080795D /* CommitPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4932615E1E7A43350080795D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4929C8301E90B1E100C863C0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4929C8311E90B26600C863C0 /* TimeCalculator.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		493261521E7A43350080795D = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				4929C8301E90B1E100C863C0 /* Helper */,
 				49CAEB221E849A340061FDCD /* UI */,
 				49CAEB211E849A0A0061FDCD /* Model */,
 				495807261E81514C003DDB4C /* Util */,
@@ -349,6 +360,7 @@
 				492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 				495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */,
+				4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */,
 				49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
