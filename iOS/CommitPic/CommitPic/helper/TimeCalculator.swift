@@ -9,30 +9,54 @@
 import UIKit
 
 
-enum Example {
-  case A
-  case B
-  case C
-  case D
-}
-
-
 class TimeCalculator: NSObject {
-  static func getTimeInformation(pushTime:String) -> (String, String)  {
+  enum StaticEnum {
+    static var someStaticVar = 0
+    static func someStaticFunc() {}
+  }
+  
+  static func getTimeInformation(pushTime:String) -> (String, String , Int)  {
     let timeInformaion = "tst"
     
-                  //"2017-04-02T03:57:05Z"
-    let isoDate = "2016-04-14T10:44:00+0000"
-    
     let dateFormatter = DateFormatter()
+    let tempLocale = dateFormatter.locale // save locale temporarily
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-    let date = dateFormatter.date(from:pushTime)!
+    let date = dateFormatter.date(from: pushTime)!
+    dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+    dateFormatter.locale = tempLocale // reset the locale
+    
+    let todayDate = NSDate()
     let calendar = Calendar.current
-    let components = calendar.dateComponents([.year, .month, .day, .hour], from: date)
-    let finalDate = calendar.date(from:components)
-
+    
+    let todayDay = calendar.component(.day, from: todayDate as Date)
+    
+    let pushDay = calendar.component(.day, from: date)
+    let pushHours = calendar.component(.hour, from: date)
+    
+    let wholedateString = dateFormatter.string(from: date)
+    
+    print("pushtimedate \(wholedateString)" )
+    if pushDay == todayDay {
+        print("workTime : \(pushHours)")
+    }
     
     
-    return (timeInformaion , timeInformaion)
+   
+    
+//    let date = Date()
+//    let calendar = Calendar.current
+//    
+//    let year = calendar.component(.year, from: date)
+//    let month = calendar.component(.month, from: date)
+//    let day = calendar.component(.day, from: date)
+    
+    
+   
+    
+    
+ 
+    
+    return (timeInformaion , timeInformaion , StaticEnum.someStaticVar)
   }
 }

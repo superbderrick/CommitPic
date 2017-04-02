@@ -47,7 +47,7 @@ class CommitMaker: NSObject {
               let finalPayUrl = urlDic?["url"]?.stringValue
               let requestInformation = CommitInformation(pushTime:pushTime , repoURL:repoURL! , payload:finalPayUrl!)
               
-              let (pTime , detailString) = TimeCalculator.getTimeInformation(pushTime: pushTime)
+              let (pTime , detailString , num) = TimeCalculator.getTimeInformation(pushTime: pushTime)
               
               self.commitInformationArray.append(requestInformation)
               
