@@ -32,30 +32,34 @@ class CommitMaker: NSObject {
         if response.data != nil {
           let json = JSON(data: response.data!)
           
-          for index in 0...json.count-1 {
+          for index in 0...json.count {
+            let eventType = json[index]["type"].stringValue
             
-            var test = json[index]["type"].stringValue
-            print(test)
+            if eventType == Constants.EventType.PushEvent {
+              let pushTime = json[index]["created_at"].stringValue
+              let repoDic = json[index]["repo"].dictionary!
+              let repoURL = repoDic["url"]?.stringValue
+              let payloadDic = json[index]["payload"].dictionary!
+              let commitDic = payloadDic["commits"]?.array
+              let urlDic = commitDic?[0].dictionary!
+              let finalUrl = urlDic?["url"]?.stringValue
+              
+              print(pushTime)
+              print(repoURL)
+              print(finalUrl)
+//
+//              let payloadDic = event["payload"] as! NSDictionary
+//              let commitDic = payloadDic["commits"] as! [[String:Any]]
+//              
+//              let urlDic = commitDic[0] as NSDictionary
+//              let finalPayUrl = urlDic["url"] as! String
+//              
+//              let commitInformation = CommitInformation(pushTime:pushTime , repoURL: repoURL , payload:finalPayUrl)
+//              self.commitInformationArray.append(commitInformation)
+              
+            }
           }
-//          for (index,subJson):(String, JSON) in json {
-//            
-//          }
-          
-//          for i in 0..<json.count {
-//            let evenType = json["type"] as! String
-//            
-//            if eventType == Constants.EventType.PushEvent {
-//              print(eventType)
-//            }
-//            
-//            
-//          }
 
-          
-
-          
-
-          
         } else {
           print(response.error!)
         }
