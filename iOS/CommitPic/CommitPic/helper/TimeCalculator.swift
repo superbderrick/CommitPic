@@ -15,6 +15,43 @@ class TimeCalculator: NSObject {
     static func someStaticFunc() {}
   }
   
+  enum WorktimeBand {
+    static let MoringCoding =    "MoringCodig"       // 0~ 9    // daybreak
+    static let AfterNoonCoding = "AfterNoonCoding"   // 9~ 12   // moring
+    static let EvningCoding =     "NightCoding"      //12~ 15   // lunch
+    static let DayBreakCodig =   "DayBreakCoding"    //15~ 20   // dinner
+  }
+  
+  static func getWeekDay(weekDay:Int) ->String {
+    var date = ""
+    switch weekDay {
+    case 1:
+      date = "Sunday"
+    case 2:
+      date = "Monday"
+    case 3:
+      date = "TuesDay"
+    case 4:
+      date = "ThursDay"
+    case 5:
+      date = "Friday"
+    case 0:
+      date = "Saturday"
+    case 0:
+      date = "Monday"
+    default:
+      date = "date"
+    }
+    
+      return date
+  }
+  
+  static func getWorkTimeBand(workTime:Int) ->String {
+    
+    var test = "test"
+    return test
+  }
+  
   static func getTimeInformation(pushTime:String) -> (String, String , Int)  {
     let timeInformaion = "tst"
     
@@ -33,6 +70,7 @@ class TimeCalculator: NSObject {
     
     let pushDay = calendar.component(.day, from: date)
     let pushHours = calendar.component(.hour, from: date)
+    let pushDate = calendar.component(.weekday, from: date)
     
     let wholedateString = dateFormatter.string(from: date)
     
@@ -40,19 +78,9 @@ class TimeCalculator: NSObject {
     if pushDay == todayDay {
         print("workTime : \(pushHours)")
     }
+      print("pushDate : \(self.getWeekDay(weekDay: pushDate))")
     
-    
-   
-    
-//    let date = Date()
-//    let calendar = Calendar.current
-//    
-//    let year = calendar.component(.year, from: date)
-//    let month = calendar.component(.month, from: date)
-//    let day = calendar.component(.day, from: date)
-    
-    
-   
+    self.getWorkTimeBand(workTime: pushHours)
     
     
  
