@@ -16,10 +16,10 @@ class TimeCalculator: NSObject {
   }
   
   enum WorktimeBand {
-    static let MoringCoding =    "MoringCodig"       // 0~ 9    // daybreak
-    static let AfterNoonCoding = "AfterNoonCoding"   // 9~ 12   // moring
-    static let EvningCoding =     "NightCoding"      //12~ 15   // lunch
-    static let DayBreakCodig =   "DayBreakCoding"    //15~ 20   // dinner
+    static let DaybreakCoding =     "DaybreakCodig"          // 0~ 8     // daybreak
+    static let MoringCoding   =     "MoringCoding"           // 8~ 12    // moring
+    static let AfternoonCodig  =    "AfternoonCoding"        // 15~ 20   // dinner
+    static let NightCodig  =        "NightCoding"            // 20~ 0    //  night
   }
   
   static func getWeekDay(weekDay:Int) ->String {
