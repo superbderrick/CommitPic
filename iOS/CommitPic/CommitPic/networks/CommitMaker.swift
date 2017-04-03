@@ -10,19 +10,27 @@ import UIKit
 import Firebase
 import Alamofire
 import SwiftyJSON
+import PromiseKit
 
 class CommitMaker: NSObject {
   
   var commits = [Commit]()
-	
   var commitInformationArray = [CommitInformation]()
+	
+  var requestManager:RequestManager!
 	
   override init() {
     super.init()
-    
-    //==self.getCommitData()
-  self.withAlmo()
-    
+	
+	requestManager = RequestManager()
+	
+	requestManager.getCommitInformation().then {_ in 
+		
+		print("test")
+		}.catch {_ in 
+			print("testff")
+	}
+	
    
   }
   private func withAlmo() {
