@@ -11,10 +11,10 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-class RequestManager: NSObject {
-	override init() {
-		
-	}
+class RequestManager {
+  init (){
+    
+  }
 	func getCommitInformation() -> Promise<String> {
 		let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
 		

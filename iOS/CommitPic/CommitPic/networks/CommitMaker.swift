@@ -12,27 +12,29 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-class CommitMaker: NSObject {
+class CommitMaker{
   
   var commits = [Commit]()
   var commitInformationArray = [CommitInformation]()
 	
   var requestManager:RequestManager!
 	
-  override init() {
-    super.init()
+   init() {
+    requestManager = RequestManager()
+  }
+  
 	
-	requestManager = RequestManager()
 	
-	requestManager.getCommitInformation().then {_ in 
-		
-		print("test")
-		}.catch {_ in 
-			print("testff")
-	}
+	
+//	requestManager.getCommitInformation().then {_ in 
+//		
+//		print("test")
+//		}.catch {_ in 
+//			print("testff")
+//	}
 	
    
-  }
+  
   private func withAlmo() {
      let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
     
