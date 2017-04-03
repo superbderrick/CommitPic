@@ -9,7 +9,7 @@
 import UIKit
 
 
-class TimeCalculator: NSObject {
+class TimeCalculator {
   enum StaticEnum {
     static var someStaticVar = 0
     static func someStaticFunc() {}

@@ -8,15 +8,15 @@
 
 import UIKit
 
-class CommitInformation: NSObject {
+class CommitInformation {
 	var pushTime:String!
-	var repo:String!
-	var payload:String!
+	var repoURL:String!
+	var payloadURL:String!
 	
 	
 	init(pushTime:String , repoURL:String , payload:String) {
 		self.pushTime = pushTime
-		self.repo = repoURL
-		self.payload = payload
+		self.repoURL = repoURL
+		self.payloadURL = payload
 	}
 }

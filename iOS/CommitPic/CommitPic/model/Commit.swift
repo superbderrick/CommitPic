@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Commit: NSObject {
+class Commit {
 	
 	var basicPhoto:UIImage = UIImage(named:"Octocat")!
 	var basicTitle:String = ""

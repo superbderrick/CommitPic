@@ -12,26 +12,15 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
-class CommitMaker: NSObject {
+class CommitMaker {
   
   var commits = [Commit]()
   var commitInformationArray = [CommitInformation]()
 	
   var requestManager:RequestManager!
 	
-  override init() {
-    super.init()
-	
+  init() {
 	requestManager = RequestManager()
-	
-	requestManager.getCommitInformation().then {_ in 
-		
-		print("test")
-		}.catch {_ in 
-			print("testff")
-	}
-	
-   
   }
   private func withAlmo() {
      let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
@@ -123,8 +112,8 @@ class CommitMaker: NSObject {
 		
 		for event in self.commitInformationArray {
 			print(event.pushTime)
-			print(event.repo)
-			print(event.payload)
+			print(event.repoURL)
+			print(event.payloadURL)
 		}
 		
 			self.secondParsing(dataArray: self.commitInformationArray)
@@ -145,7 +134,7 @@ class CommitMaker: NSObject {
 		for commit in dataArray {
 			
 			let session = URLSession.shared
-			let urlString = commit.payload
+			let urlString = commit.payloadURL
 			let url = URL(string:urlString!)
 			let request = URLRequest(url:url!)
 			
@@ -190,7 +179,7 @@ class CommitMaker: NSObject {
 		for commit in dataArray {
 			
 			let session = URLSession.shared
-			let urlString = commit.repo
+			let urlString = commit.repoURL
 			let url = URL(string:urlString!)
 			let request = URLRequest(url:url!)
 			
