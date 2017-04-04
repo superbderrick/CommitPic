@@ -17,8 +17,17 @@ class RequestManager {
   
   }
   
-  func test() {
-      print(self.commitInformationArray.count)
+  func showWholeData(_ finalArray:[CommitInformation]) {
+    for commit in finalArray {
+      print("Whole DataNum : \(finalArray.count)")
+      print("repoName  : \(commit.repoName)")
+      print("total  : \(commit.total)")
+      print("add  : \(commit.additions)")
+      print("delete  : \(commit.deleteions)")
+      print("pushTime  : \(commit.pushTime)")
+    }
+    
+    
   }
   
   func getCommitData() {
@@ -26,25 +35,15 @@ class RequestManager {
       self.getRepoInformation(commitArray)
       }.then { repoData in
         self.getContiributeInformation(repoData)
-      }.then { repoData in
-        self.test()
+      }.then { finalArray in
+        self.showWholeData(finalArray)
       }.catch { error in
         print(error)
     }
 
   }
   
-  func testfunction() {
-      print("testFunction")
-  }
-  func printWholeData(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
-    return Promise { fulfill, reject in
-     
 
-      
-    }
-    
-  }
   
   func getContiributeInformation(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
     var count = 0
@@ -59,18 +58,20 @@ class RequestManager {
             let additions = statDic["additions"]?.int
             let deletions = statDic["deletions"]?.int
             
-            print("getContiributeInformation")
+            
             commitArray[count].total = total!
             commitArray[count].additions = additions!
             commitArray[count].deleteions = deletions!
             
-            print("current Count \(count)")
-            print("commitArray Count \(commitArray.count)")
+            
+            
             if count < commitArray.count {
               count += 1
-              print("incurrent Count \(count)")
-            } else if count == commitArray.count {
+              
+            }
+            if count == commitArray.count {
               fulfill(commitArray)
+              print("Done third Request")
             }
             
           } else {
@@ -101,6 +102,7 @@ class RequestManager {
               
               if count == commitArray.count {
                 fulfill(commitArray)
+                print("Done second Request")
               }
           } else {
             reject(response.error!)
@@ -144,6 +146,7 @@ class RequestManager {
           
           if commitArray.count > 0 {
             fulfill(commitArray)
+            print("Done first Request")
           } else {
             reject(response.error!)
           }
