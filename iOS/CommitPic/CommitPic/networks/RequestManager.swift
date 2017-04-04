@@ -17,18 +17,32 @@ class RequestManager {
   
   }
   
+  func test() {
+      print(self.commitInformationArray.count)
+  }
+  
   func getCommitData() {
     self.getCommitInformation().then { commitArray in
       self.getRepoInformation(commitArray)
       }.then { repoData in
         self.getContiributeInformation(repoData)
       }.then { repoData in
-        self.printWholeData()
+        self.test()
       }.catch { error in
         print(error)
     }
+
   }
-  func printWholeData() {
+  
+  func testfunction() {
+      print("testFunction")
+  }
+  func printWholeData(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
+    return Promise { fulfill, reject in
+     
+
+      
+    }
     
   }
   
@@ -45,36 +59,18 @@ class RequestManager {
             let additions = statDic["additions"]?.int
             let deletions = statDic["deletions"]?.int
             
-            print(total!)
-            print(additions!)
-            print(deletions!)
+            print("getContiributeInformation")
+            commitArray[count].total = total!
+            commitArray[count].additions = additions!
+            commitArray[count].deleteions = deletions!
             
-          } else {
-            reject(response.error!)
-          }
-          
-        }
-        
-      }
-      fulfill(commitArray)
-      
-    }
-    
-  }
-  
-  func getRepoInformation(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
-    var count = 0
-    return Promise { fulfill, reject in
-      for commit in commitArray {
-        Alamofire.request(commit.repoURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
-          if response.data != nil {
-            let json = JSON(data:response.data!)
-            let languageType = json["language"].string
-            
-            
-            commitArray[count].repoName = languageType!
+            print("current Count \(count)")
+            print("commitArray Count \(commitArray.count)")
             if count < commitArray.count {
               count += 1
+              print("incurrent Count \(count)")
+            } else if count == commitArray.count {
+              fulfill(commitArray)
             }
             
           } else {
@@ -84,7 +80,37 @@ class RequestManager {
         }
         
       }
-      fulfill(commitArray)
+      
+     
+    }
+    
+  }
+  
+  func getRepoInformation(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
+    var count = 0
+    return Promise { fulfill, reject in
+      for commit in commitArray {
+        Alamofire.request(commit.repoURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+            if response.data != nil {
+              let json = JSON(data:response.data!)
+              let languageType = json["language"].string
+              commitArray[count].repoName = languageType!
+              if count < commitArray.count {
+              count += 1
+              }
+              
+              if count == commitArray.count {
+                fulfill(commitArray)
+              }
+          } else {
+            reject(response.error!)
+          }
+          
+        }
+        
+        
+      }
+      
       
     }
     

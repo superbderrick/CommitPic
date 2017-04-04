@@ -13,6 +13,9 @@ class CommitInformation {
   var repoURL:String!
   var payloadURL:String!
   var repoName:String?
+  var total:Int?
+  var additions:Int?
+  var deleteions:Int?
 	
 	
 	init(pushTime:String , repoURL:String , payload:String) {
