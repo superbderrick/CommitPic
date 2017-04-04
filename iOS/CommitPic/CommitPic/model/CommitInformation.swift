@@ -9,9 +9,10 @@
 import UIKit
 
 class CommitInformation {
-	var pushTime:String!
-	var repo:String!
-	var payload:String!
+  var pushTime:String!
+  var repo:String!
+  var payload:String!
+  var RepoName:String?
 	
 	
 	init(pushTime:String , repoURL:String , payload:String) {
