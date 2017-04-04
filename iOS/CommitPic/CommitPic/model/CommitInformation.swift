@@ -10,14 +10,14 @@ import UIKit
 
 class CommitInformation {
   var pushTime:String!
-  var repo:String!
-  var payload:String!
-  var RepoName:String?
+  var repoURL:String!
+  var payloadURL:String!
+  var repoName:String?
 	
 	
 	init(pushTime:String , repoURL:String , payload:String) {
 		self.pushTime = pushTime
-		self.repo = repoURL
-		self.payload = payload
+		self.repoURL = repoURL
+		self.payloadURL = payload
 	}
 }

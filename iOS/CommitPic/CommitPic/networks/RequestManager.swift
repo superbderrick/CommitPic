@@ -14,7 +14,10 @@ import PromiseKit
 class RequestManager {
   var commitInformationArray = [CommitInformation]()
   init (){
-    
+  
+  }
+  
+  func getCommitData() {
     self.getCommitInformation().then { commitArray in
       self.getRepoInformation(commitArray)
       }.then { repoData in
@@ -24,7 +27,6 @@ class RequestManager {
       }.catch { error in
         print(error)
     }
-    
   }
   func printWholeData() {
     
@@ -34,24 +36,18 @@ class RequestManager {
     var count = 0
     return Promise { fulfill, reject in
       for commit in commitArray {
-        Alamofire.request(commit.payload, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(commit.payloadURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
           if response.data != nil {
             
             let json = JSON(data:response.data!)
             let statDic = json["stats"].dictionary!
-            let count = statDic["total"]?.int
-            let count2 = statDic["additions"]?.int
-            let count3 = statDic["deletions"]?.int
+            let total = statDic["total"]?.int
+            let additions = statDic["additions"]?.int
+            let deletions = statDic["deletions"]?.int
             
-            print(count!)
-            print(count2!)
-            print(count3!)
-            
-            //commitArray[count].RepoName = languageType!
-            
-            
-            
-            
+            print(total!)
+            print(additions!)
+            print(deletions!)
             
           } else {
             reject(response.error!)
@@ -70,13 +66,13 @@ class RequestManager {
     var count = 0
     return Promise { fulfill, reject in
       for commit in commitArray {
-        Alamofire.request(commit.repo, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(commit.repoURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
           if response.data != nil {
             let json = JSON(data:response.data!)
             let languageType = json["language"].string
             
             
-            commitArray[count].RepoName = languageType!
+            commitArray[count].repoName = languageType!
             if count < commitArray.count {
               count += 1
             }
