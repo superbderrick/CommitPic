@@ -138,7 +138,9 @@ class RequestManager {
               let commitDic = payloadDic["commits"]?.array
               let urlDic = commitDic?[0].dictionary!
               let finalPayUrl = urlDic?["url"]?.stringValue
-              let requestInformation = CommitInformation(pushTime:pushTime , repoURL:repoURL! , payload:finalPayUrl!)
+              
+              let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
+              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL! , payload:finalPayUrl! ,detailDateInfo:"test")
               commitArray.append(requestInformation)
             }
             

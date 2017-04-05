@@ -8,22 +8,32 @@
 
 import UIKit
 
-
-class TimeCalculator: NSObject {
-  enum StaticEnum {
-    static var someStaticVar = 0
-    static func someStaticFunc() {}
-  }
+public enum WorktimeBand {
   
-  enum WorktimeBand {
-    static let DaybreakCoding =     "DaybreakCodig"          // 0~ 8     // daybreak
-    static let MoringCoding   =     "MoringCoding"           // 8~ 12    // moring
-    static let AfternoonCodig  =    "AfternoonCoding"        // 15~ 20   // dinner
-    static let NightCodig  =        "NightCoding"            // 20~ 0    //  night
+  case MoringCoding
+  case AfternoonCodig
+  case NightCodig
+  case DayBreakCoding
+  
+  var workTimeBandType: String {
+    switch self {
+    case .MoringCoding:
+      return "MoringCoding"
+    case .AfternoonCodig:
+      return "AfternoonCodig"
+    case .NightCodig:
+    return "NightCoding"
+    case .DayBreakCoding:
+      return "DayBreakCoding"
   }
+}
+}
+class TimeCalculator {
+
   
   static func getWeekDay(weekDay:Int) ->String {
     var date = ""
+    print(weekDay)
     switch weekDay {
     case 1:
       date = "Sunday"
@@ -32,13 +42,13 @@ class TimeCalculator: NSObject {
     case 3:
       date = "TuesDay"
     case 4:
-      date = "ThursDay"
+      date = "WensDay"
     case 5:
+      date = "Thursday"
+    case 6:
       date = "Friday"
-    case 0:
+    case 7:
       date = "Saturday"
-    case 0:
-      date = "Monday"
     default:
       date = "date"
     }
@@ -52,8 +62,8 @@ class TimeCalculator: NSObject {
     return test
   }
   
-  static func getTimeInformation(pushTime:String) -> (String, String , Int)  {
-    let timeInformaion = "tst"
+  static func getTimeInformation(pushTime:String) -> (String)  {
+    var timeInformaion = "date"
     
     let dateFormatter = DateFormatter()
     let tempLocale = dateFormatter.locale // save locale temporarily
@@ -74,17 +84,14 @@ class TimeCalculator: NSObject {
     
     let wholedateString = dateFormatter.string(from: date)
     
-    print("pushtimedate \(wholedateString)" )
-    if pushDay == todayDay {
-        print("workTime : \(pushHours)")
-    }
-      print("pushDate : \(self.getWeekDay(weekDay: pushDate))")
-    
-    self.getWorkTimeBand(workTime: pushHours)
-    
+//    print("pushtimedate \(wholedateString)" )
+//    if pushDay == todayDay {
+//        print("workTime : \(pushHours)")
+//    }
+    timeInformaion = wholedateString + "\(self.getWeekDay(weekDay: pushDate))"
     
  
     
-    return (timeInformaion , timeInformaion , StaticEnum.someStaticVar)
+    return (timeInformaion)
   }
 }

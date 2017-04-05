@@ -13,14 +13,16 @@ class CommitInformation {
   var repoURL:String!
   var payloadURL:String!
   var repoName:String?
+  var detailDateInformation:String!
   var total:Int?
   var additions:Int?
   var deleteions:Int?
 	
 	
-	init(pushTime:String , repoURL:String , payload:String) {
+  init(pushTime:String , repoURL:String , payload:String , detailDateInfo:String) {
 		self.pushTime = pushTime
 		self.repoURL = repoURL
 		self.payloadURL = payload
+    self.detailDateInformation = detailDateInfo
 	}
 }
