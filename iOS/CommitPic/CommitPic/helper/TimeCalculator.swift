@@ -33,7 +33,6 @@ class TimeCalculator {
   
   static func getWeekDay(weekDay:Int) ->String {
     var date = ""
-    print(weekDay)
     switch weekDay {
     case 1:
       date = "Sunday"
@@ -52,18 +51,52 @@ class TimeCalculator {
     default:
       date = "date"
     }
-    
       return date
   }
   
-  static func getWorkTimeBand(workTime:Int) ->String {
+  private static func getWorkBand(_ workTime:Int) ->String {
+    var workBand = ""
+    switch workTime {
+    case 0..<7:
+      workBand = "DayBreakCoding"
+    case 7..<12:
+      workBand = "MoringCoding"
+    case 12..<14:
+      workBand = "LunchCoding"
+    case 14..<19:
+      workBand = "AfternoonCoding"
+    case 19..<24:
+      workBand = "NightCoding"
+    default:
+      workBand = "CodingTime"
+    }
+    return workBand
+  }
+  
+  
+  
+   static func getDetail(_ previousTime:String) -> String {
     
-    var test = "test"
-    return test
+    var finalDetail = ""
+    var weekDate = ""
+    var workBand = ""
+    if let time = previousTime as String? { //unwapping
+      let calendar = Calendar.current
+      let dateFormatter = DateFormatter()
+      dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+      let date = dateFormatter.date(from: time)!
+      let pushDate = calendar.component(.weekday, from: date)
+      let pushHours = calendar.component(.hour, from: date)
+      weekDate = self.getWeekDay(weekDay: pushDate)
+      workBand = self.getWorkBand(pushHours)
+      finalDetail = weekDate + " " + workBand
+    }else{
+      finalDetail = "test"
+    }
+    return finalDetail
   }
   
   static func getTimeInformation(pushTime:String) -> (String)  {
-    //var timeInformaion = "date"
     
     let dateFormatter = DateFormatter()
     let tempLocale = dateFormatter.locale // save locale temporarily
@@ -73,23 +106,7 @@ class TimeCalculator {
     dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
     dateFormatter.locale = tempLocale // reset the locale
     
-   // let todayDate = NSDate()
-   // let calendar = Calendar.current
-    
-//    let todayDay = calendar.component(.day, from: todayDate as Date)
-//    let pushDay = calendar.component(.day, from: date)
-//    let pushHours = calendar.component(.hour, from: date)
-//    let pushDate = calendar.component(.weekday, from: date)
-    
     let wholedateString = dateFormatter.string(from: date)
-    
-//    print("pushtimedate \(wholedateString)" )
-//    if pushDay == todayDay {
-//        print("workTime : \(pushHours)")
-//    }
-    //timeInformaion = wholedateString + "\(self.getWeekDay(weekDay: pushDate))"
-    
- 
     
     return (wholedateString)
   }

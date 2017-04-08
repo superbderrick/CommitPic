@@ -73,6 +73,7 @@
 		4929C8301E90B1E100C863C0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				49B328B21E7EC70300DB2AE0 /* Constant.swift */,
 				4929C8311E90B26600C863C0 /* TimeCalculator.swift */,
 			);
 			name = Helper;
@@ -128,8 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */,
-				49B328B21E7EC70300DB2AE0 /* Constant.swift */,
-				498AB4C01E89E3B800D228EC /* CommitMaker.swift */,
 				49F21D311E923F9100C9434B /* RequestManager.swift */,
 			);
 			name = Networks;
@@ -139,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				49BB519D1E8906D8008F8D98 /* Commit.swift */,
+				498AB4C01E89E3B800D228EC /* CommitMaker.swift */,
 				4957518E1E8E11B600077F34 /* CommitInformation.swift */,
 			);
 			name = Model;

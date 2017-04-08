@@ -26,6 +26,7 @@ class RequestManager {
       print("delete  : \(commit.deleteions)")
       print("pushTime  : \(commit.pushTime)")
       print("repoName  : \(commit.repoName)")
+      print("detail  : \(commit.detailDateInformation)")
     }
     
     
@@ -65,10 +66,8 @@ class RequestManager {
             commitArray[count].deleteions = deletions!
             
             
-            
             if count < commitArray.count {
               count += 1
-              
             }
             if count == commitArray.count {
               fulfill(commitArray)
@@ -142,7 +141,8 @@ class RequestManager {
               let finalPayUrl = urlDic?["url"]?.stringValue
               
               let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
-              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL! , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!))
+              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL!
+                , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!) ,detailBand:TimeCalculator.getDetail(fPushtime))
               commitArray.append(requestInformation)
             }
             
