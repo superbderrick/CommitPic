@@ -47,6 +47,11 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - Realm (2.4.4):
+    - Realm/Headers (= 2.4.4)
+  - Realm/Headers (2.4.4)
+  - RealmSwift (2.4.4):
+    - Realm (= 2.4.4)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -58,6 +63,7 @@ DEPENDENCIES:
   - OAuthSwift (~> 1.1.0)
   - PKHUD (~> 4.0)
   - PromiseKit (~> 4.0)
+  - RealmSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -74,8 +80,10 @@ SPEC CHECKSUMS:
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  Realm: 5a280a1f5a9a3c267bebf4f41ee47911137703d7
+  RealmSwift: 0c02b9f2d4be4301c497ed10e53a0580584eb1dd
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 9a73b7857004419f1c4e27dfd456604215aee5f0
+PODFILE CHECKSUM: e16dfbb95729a521a74764fd411cc812f2dfdccb
 
 COCOAPODS: 1.2.0
