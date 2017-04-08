@@ -63,7 +63,7 @@ class TimeCalculator {
   }
   
   static func getTimeInformation(pushTime:String) -> (String)  {
-    var timeInformaion = "date"
+    //var timeInformaion = "date"
     
     let dateFormatter = DateFormatter()
     let tempLocale = dateFormatter.locale // save locale temporarily
@@ -73,14 +73,13 @@ class TimeCalculator {
     dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
     dateFormatter.locale = tempLocale // reset the locale
     
-    let todayDate = NSDate()
-    let calendar = Calendar.current
+   // let todayDate = NSDate()
+   // let calendar = Calendar.current
     
-    let todayDay = calendar.component(.day, from: todayDate as Date)
-    
-    let pushDay = calendar.component(.day, from: date)
-    let pushHours = calendar.component(.hour, from: date)
-    let pushDate = calendar.component(.weekday, from: date)
+//    let todayDay = calendar.component(.day, from: todayDate as Date)
+//    let pushDay = calendar.component(.day, from: date)
+//    let pushHours = calendar.component(.hour, from: date)
+//    let pushDate = calendar.component(.weekday, from: date)
     
     let wholedateString = dateFormatter.string(from: date)
     
@@ -88,10 +87,10 @@ class TimeCalculator {
 //    if pushDay == todayDay {
 //        print("workTime : \(pushHours)")
 //    }
-    timeInformaion = wholedateString + "\(self.getWeekDay(weekDay: pushDate))"
+    //timeInformaion = wholedateString + "\(self.getWeekDay(weekDay: pushDate))"
     
  
     
-    return (timeInformaion)
+    return (wholedateString)
   }
 }

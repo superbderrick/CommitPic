@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490F0E311E98A19700C2A672 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F0E301E98A19700C2A672 /* StringUtil.swift */; };
 		4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4929C8311E90B26600C863C0 /* TimeCalculator.swift */; };
 		492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED6301E827D350014290A /* DailyCommitViewController.swift */; };
 		4932615F1E7A43350080795D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4932615E1E7A43350080795D /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490F0E301E98A19700C2A672 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		4929C8311E90B26600C863C0 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCalculator.swift; path = helper/TimeCalculator.swift; sourceTree = "<group>"; };
 		492ED6301E827D350014290A /* DailyCommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyCommitViewController.swift; path = viewcontrollers/DailyCommitViewController.swift; sourceTree = "<group>"; };
 		4932615B1E7A43350080795D /* CommitPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommitPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				495807241E815147003DDB4C /* GCDBlackBox.swift */,
+				490F0E301E98A19700C2A672 /* StringUtil.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490F0E311E98A19700C2A672 /* StringUtil.swift in Sources */,
 				49F21D321E923F9100C9434B /* RequestManager.swift in Sources */,
 				49BB519E1E8906D8008F8D98 /* Commit.swift in Sources */,
 				4957518F1E8E11B600077F34 /* CommitInformation.swift in Sources */,

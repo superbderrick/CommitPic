@@ -20,11 +20,12 @@ class RequestManager {
   func showWholeData(_ finalArray:[CommitInformation]) {
     for commit in finalArray {
       print("Whole DataNum : \(finalArray.count)")
-      print("repoName  : \(commit.repoName)")
+      print("languageType  : \(commit.languageType)")
       print("total  : \(commit.total)")
       print("add  : \(commit.additions)")
       print("delete  : \(commit.deleteions)")
       print("pushTime  : \(commit.pushTime)")
+      print("repoName  : \(commit.repoName)")
     }
     
     
@@ -95,7 +96,7 @@ class RequestManager {
             if response.data != nil {
               let json = JSON(data:response.data!)
               let languageType = json["language"].string
-              commitArray[count].repoName = languageType!
+              commitArray[count].languageType = languageType!
               if count < commitArray.count {
               count += 1
               }
@@ -134,13 +135,14 @@ class RequestManager {
               let pushTime = json[index]["created_at"].stringValue
               let repoDic = json[index]["repo"].dictionary!
               let repoURL = repoDic["url"]?.stringValue
+              let repoName = repoDic["name"]?.stringValue
               let payloadDic = json[index]["payload"].dictionary!
               let commitDic = payloadDic["commits"]?.array
               let urlDic = commitDic?[0].dictionary!
               let finalPayUrl = urlDic?["url"]?.stringValue
               
               let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
-              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL! , payload:finalPayUrl! ,detailDateInfo:"test")
+              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL! , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!))
               commitArray.append(requestInformation)
             }
             
