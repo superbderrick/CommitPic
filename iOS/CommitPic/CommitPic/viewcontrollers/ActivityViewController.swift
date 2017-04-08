@@ -73,17 +73,15 @@ class ActivityViewController: UIViewController ,UITableViewDelegate, UITableView
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ActivityTableViewCell
 		
 		let commit = commitArray[indexPath.row]
-    print(commit.pushTime)
-    print(commit.repoName)
-    print(commit.languageType!)
-    print(commit.detailDateInformation)
-    print(commit.additions)
-    print(commit.deleteions)
-    print(commit.total)
-//		cell.contentNameLabel.text = .name
-//		cell.contentTypeImageView.image = content.photo
-//		cell.contentTypeLabel.text = content.type
-		
+    cell.detailLabel?.text = commit.detailDateInformation
+    cell.repoName?.text = commit.repoName
+    cell.languageName?.text = commit.languageType
+    cell.pushDate?.text = commit.pushTime
+    cell.addtion?.text = "Adtion : \(commit.additions!)"
+    cell.delete?.text = "Delete : \(commit.deleteions!)"
+    
+    
+//
 		
 		return cell
 	}

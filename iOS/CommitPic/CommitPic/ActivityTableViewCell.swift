@@ -10,6 +10,13 @@ import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
 
+  @IBOutlet weak var pushDate: UILabel!
+  @IBOutlet weak var detailLabel: UILabel!
+  @IBOutlet weak var repoName: UILabel!
+  @IBOutlet weak var languageName: UILabel!
+  @IBOutlet weak var addtion: UILabel!
+  @IBOutlet weak var delete: UILabel!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
