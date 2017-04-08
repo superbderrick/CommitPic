@@ -12,12 +12,12 @@ import SwiftyJSON
 import PromiseKit
 
 class RequestManager {
-  var commitInformationArray = [CommitInformation]()
+  var commitInformationArray = [Commit]()
   init (){
   
   }
   
-  func showWholeData(_ finalArray:[CommitInformation]) {
+  func showWholeData(_ finalArray:[Commit]) {
     for commit in finalArray {
       print("Whole DataNum : \(finalArray.count)")
       print("languageType  : \(commit.languageType)")
@@ -29,25 +29,26 @@ class RequestManager {
       print("detail  : \(commit.detailDateInformation)")
     }
     
-    
   }
   
-  func getCommitData() {
-    self.getCommitInformation().then { commitArray in
-      self.getRepoInformation(commitArray)
-      }.then { repoData in
-        self.getContiributeInformation(repoData)
-      }.then { finalArray in
-        self.showWholeData(finalArray)
-      }.catch { error in
-        print(error)
+  func getCommitData() ->  Promise<[Commit]> {
+    return Promise { fulfill, reject in
+          self.getCommitInformation().then { commitArray in
+            self.getRepoInformation(commitArray)
+            }.then { repoData in
+              self.getContiributeInformation(repoData)
+            }.then { finalArray in
+              fulfill(finalArray)
+            }.catch { error in
+              print(error)
+          }
     }
 
   }
   
 
   
-  func getContiributeInformation(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
+  func getContiributeInformation(_ commitArray:[Commit]) -> Promise<[Commit]> {
     var count = 0
     return Promise { fulfill, reject in
       for commit in commitArray {
@@ -87,7 +88,7 @@ class RequestManager {
     
   }
   
-  func getRepoInformation(_ commitArray:[CommitInformation]) -> Promise<[CommitInformation]> {
+  func getRepoInformation(_ commitArray:[Commit]) -> Promise<[Commit]> {
     var count = 0
     return Promise { fulfill, reject in
       for commit in commitArray {
@@ -118,9 +119,9 @@ class RequestManager {
     
   }
   
-  func getCommitInformation() -> Promise<[CommitInformation]> {
+  func getCommitInformation() -> Promise<[Commit]> {
     let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
-    var commitArray = [CommitInformation]()
+    var commitArray = [Commit]()
     return Promise { fulfill, reject in
       
       Alamofire.request(urlString, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
@@ -141,7 +142,7 @@ class RequestManager {
               let finalPayUrl = urlDic?["url"]?.stringValue
               
               let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
-              let requestInformation = CommitInformation(pushTime:fPushtime , repoURL:repoURL!
+              let requestInformation = Commit(pushTime:fPushtime , repoURL:repoURL!
                 , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!) ,detailBand:TimeCalculator.getDetail(fPushtime))
               commitArray.append(requestInformation)
             }

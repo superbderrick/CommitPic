@@ -14,33 +14,27 @@ import PromiseKit
 
 class CommitMaker{
   
-  var commits = [Commit]()
-  var commitInformationArray = [CommitInformation]()
+  var commitInformationArray = [Commit]()
   
   var requestManager:RequestManager!
   
   init() {
     requestManager = RequestManager()
-    requestManager.getCommitData()
+    print("init")
   }
   
-  private func inserTestDATA () {
-    for i in 0..<3 {
-      print("(i)")
-      let testImage = UIImage(named:"Octocat")
-      let testString = "Hello"
-      
-      let commit = Commit(basicPhoto: testImage,basicTitle: testString,date: testString ,
-                          detailComment: testString , totalTime: testString , totalTimePhoto: testImage ,
-                          languageType: testString,languageTypePhoto: testImage ,commitNum:  i , commitPhoto: testImage ,repoName: testString ,repoPhoto: testImage)
-      
-      commits.append(commit!)
+  
+  func getCommitInformation() ->  Promise<[Commit]> {
+    return Promise { fulfill, reject in
+      self.requestManager.getCommitData().then { commitArray in
+        fulfill(commitArray)
+        }.catch { error in
+          print(error)
+      }
     }
-    
-  }
   
-  func getCommitInformation() -> [Commit]{
-    
-    return self.commits
   }
 }
+  
+
+

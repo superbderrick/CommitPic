@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+import EZLoadingActivity
 class ActivityViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource{
 	
 	@IBOutlet weak var dateSegment: UISegmentedControl!
 	@IBOutlet weak var activityTableView: UITableView!
 	
 	
-	var commits = [Commit]()
+  var commitArray = [Commit]()
 	var commitMaker:CommitMaker!
 
     override func viewDidLoad() {
@@ -24,21 +24,36 @@ class ActivityViewController: UIViewController ,UITableViewDelegate, UITableView
 		self.activityTableView.delegate = self
 		
 		
+      
 		commitMaker = CommitMaker()
-		commits = commitMaker.getCommitInformation()
-		
-	
-		performUIUpdatesOnMain {
-			self.activityTableView.reloadData()
-		}
-		
+    EZLoadingActivity.show("Loading...", disableUI: true)
+      
+    
+    commitMaker.getCommitInformation().then { commitArray in
+      self.attachData(commitArray)
+    }.catch { error in
+          print(error)
     }
+	
+    }
+  
+  func attachData(_ data : [Commit]) -> Void {
+      self.commitArray = data
+      reloadTableView()
+  }
+  
+  func reloadTableView() {
+    performUIUpdatesOnMain {
+      EZLoadingActivity.hide(true, animated: false)
+      self.activityTableView.reloadData()
+    }
+  }
 	
 
-    override func didReceiveMemoryWarning() {
+  override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
+  }
     
 
 	// MARK: - Table view data source
@@ -49,7 +64,7 @@ class ActivityViewController: UIViewController ,UITableViewDelegate, UITableView
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		// Return the number of rows in the section.
-		return commits.count
+		return commitArray.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,8 +72,15 @@ class ActivityViewController: UIViewController ,UITableViewDelegate, UITableView
 		let cellIdentifier = "ActivityViewCell"
 		let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ActivityTableViewCell
 		
-//		let content = contents[indexPath.row]
-//		cell.contentNameLabel.text = content.name
+		let commit = commitArray[indexPath.row]
+    print(commit.pushTime)
+    print(commit.repoName)
+    print(commit.languageType!)
+    print(commit.detailDateInformation)
+    print(commit.additions)
+    print(commit.deleteions)
+    print(commit.total)
+//		cell.contentNameLabel.text = .name
 //		cell.contentTypeImageView.image = content.photo
 //		cell.contentTypeLabel.text = content.type
 		
