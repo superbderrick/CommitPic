@@ -11,25 +11,18 @@ import Alamofire
 import SwiftyJSON
 import PromiseKit
 
+public enum CommitRange {
+  case Today
+  case Week
+}
+
 class RequestManager {
   var commitInformationArray = [Commit]()
-  init (){
-  
+  var range:CommitRange!
+  init (_ range:CommitRange){
+    self.range = range
   }
   
-  func showWholeData(_ finalArray:[Commit]) {
-    for commit in finalArray {
-      print("Whole DataNum : \(finalArray.count)")
-      print("languageType  : \(commit.languageType)")
-      print("total  : \(commit.total)")
-      print("add  : \(commit.additions)")
-      print("delete  : \(commit.deleteions)")
-      print("pushTime  : \(commit.pushTime)")
-      print("repoName  : \(commit.repoName)")
-      print("detail  : \(commit.detailDateInformation)")
-    }
-    
-  }
   
   func getCommitData() ->  Promise<[Commit]> {
     return Promise { fulfill, reject in
@@ -137,18 +130,23 @@ class RequestManager {
             
             if eventType == Constants.EventType.PushEvent {
               let pushTime = json[index]["created_at"].stringValue
-              let repoDic = json[index]["repo"].dictionary!
-              let repoURL = repoDic["url"]?.stringValue
-              let repoName = repoDic["name"]?.stringValue
-              let payloadDic = json[index]["payload"].dictionary!
-              let commitDic = payloadDic["commits"]?.array
-              let urlDic = commitDic?[0].dictionary!
-              let finalPayUrl = urlDic?["url"]?.stringValue
               
-              let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
-              let requestInformation = Commit(pushTime:fPushtime , repoURL:repoURL!
-                , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!) ,detailBand:TimeCalculator.getDetail(fPushtime))
-              commitArray.append(requestInformation)
+              if TimeCalculator.checkToday(pushTime: pushTime) {
+                let repoDic = json[index]["repo"].dictionary!
+                let repoURL = repoDic["url"]?.stringValue
+                let repoName = repoDic["name"]?.stringValue
+                let payloadDic = json[index]["payload"].dictionary!
+                let commitDic = payloadDic["commits"]?.array
+                let urlDic = commitDic?[0].dictionary!
+                let finalPayUrl = urlDic?["url"]?.stringValue
+                
+                let fPushtime = TimeCalculator.getTimeInformation(pushTime: pushTime)
+                let requestInformation = Commit(pushTime:fPushtime , repoURL:repoURL!
+                  , payload:finalPayUrl! ,repoName:StringUtil.getRepoName(fullName: repoName!) ,detailBand:TimeCalculator.getDetail(fPushtime))
+                commitArray.append(requestInformation)
+              }
+              
+              
             }
             
           }

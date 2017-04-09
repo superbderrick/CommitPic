@@ -18,8 +18,8 @@ class CommitMaker{
   
   var requestManager:RequestManager!
   
-  init() {
-    requestManager = RequestManager()
+  init(_ range:CommitRange) {
+    requestManager = RequestManager(range)
     print("init")
   }
   

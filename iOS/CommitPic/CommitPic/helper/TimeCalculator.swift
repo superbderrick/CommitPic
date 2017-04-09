@@ -110,4 +110,24 @@ class TimeCalculator {
     
     return (wholedateString)
   }
+  
+  static func checkToday(pushTime:String) -> (Bool) {
+    var isToday = false
+    let calendar = Calendar.current
+    let today = NSDate()
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    let date = dateFormatter.date(from: pushTime)!
+    let commitDay = calendar.component(.day, from: date)
+    let todayDay = calendar.component(.day, from: today as Date)
+    
+    if commitDay == todayDay {
+      isToday =  true
+    } else {
+      isToday = false
+    }
+     
+    return (isToday)
+  }
 }

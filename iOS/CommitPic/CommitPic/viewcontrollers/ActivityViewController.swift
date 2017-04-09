@@ -25,7 +25,7 @@ class ActivityViewController: UIViewController ,UITableViewDelegate, UITableView
 		
 		
       
-		commitMaker = CommitMaker()
+		commitMaker = CommitMaker(CommitRange.Today)
     EZLoadingActivity.show("Loading...", disableUI: true)
       
     
