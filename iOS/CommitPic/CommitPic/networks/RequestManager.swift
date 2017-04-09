@@ -50,21 +50,25 @@ class RequestManager {
   
   func getContiributeInformation(_ commitArray:[Commit]) -> Promise<[Commit]> {
     var count = 0
+    var total = 0
+    var additions = 0
+    var deletions = 0
     return Promise { fulfill, reject in
       for commit in commitArray {
         Alamofire.request(commit.payloadURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
           if response.data != nil {
             
             let json = JSON(data:response.data!)
-            let statDic = json["stats"].dictionary!
-            let total = statDic["total"]?.int
-            let additions = statDic["additions"]?.int
-            let deletions = statDic["deletions"]?.int
             
-            
-            commitArray[count].total = total!
-            commitArray[count].additions = additions!
-            commitArray[count].deleteions = deletions!
+            if let statDic = json["stats"].dictionary {
+              
+               total = (statDic["total"]?.int)!
+               additions = (statDic["additions"]?.int)!
+               deletions = (statDic["deletions"]?.int)!
+            }
+            commitArray[count].total = total
+            commitArray[count].additions = additions
+            commitArray[count].deleteions = deletions
             
             
             if count < commitArray.count {

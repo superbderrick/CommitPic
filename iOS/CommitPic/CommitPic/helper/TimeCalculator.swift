@@ -41,7 +41,7 @@ class TimeCalculator {
     case 3:
       date = "TuesDay"
     case 4:
-      date = "WensDay"
+      date = "Wednesday"
     case 5:
       date = "Thursday"
     case 6:
