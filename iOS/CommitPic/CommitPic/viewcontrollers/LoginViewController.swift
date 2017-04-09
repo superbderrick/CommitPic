@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import OAuthSwift
 import PKHUD
+import SwiftyJSON
 
 class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
@@ -27,7 +28,16 @@ class LoginViewController: OAuthViewController {
     super.viewDidLoad()
     
     if FIRAuth.auth()?.currentUser != nil {
+      
+      FIRAuth.auth()?.currentUser?.getTokenWithCompletion() { (token, error) in
+        if let t = token {
+          print(t)
+        } else {
+          NSLog("Unable to get firebase token: \(error!.localizedDescription)")
+        }
+      }
       		performUIUpdatesOnMain {
+            
       			 self.performSegue(withIdentifier: "authSuccess", sender: self)
       		}
     } else {
@@ -58,6 +68,28 @@ class LoginViewController: OAuthViewController {
 	  let _ = oauthSwift.authorize(withCallbackURL: Constants.FIREBASEInfo.FIREBASE_CALLBACK_ADRESS
 		, scope: Constants.GithubRequestValue.Default, state: state,
 		  success: { credential, response, parameters in
+        
+        let json = JSON(response!.data)
+        print(json)
+
+        if let id = json["login"].dictionary {
+            print(json)
+//          total = (statDic["total"]?.int)!
+//          additions = (statDic["additions"]?.int)!
+//          deletions = (statDic["deletions"]?.int)!
+        }
+        
+      
+//        id jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&connectionError];
+//        //            NSLog(@"jsonDict========= %@", jsonDict);
+//        
+//        APPDELEGATE.engine = [[UAGithubEngine alloc] initWithUsername:[((NSDictionary*)jsonDict) objectForKey:@"login"] password:txtfUserPassword.text withReachability:YES];
+//        
+//        
+//        APPDELEGATE.authUsername = [((NSDictionary*)jsonDict) objectForKey:@"login"];
+        
+        
+        
 			let accessToken = credential.oauthToken
 			let credentialFir = FIRGitHubAuthProvider.credential(withToken: accessToken)
 			self.authWithFirebase(credential: credentialFir)
@@ -80,6 +112,7 @@ extension LoginViewController {
 	func authWithFirebase(credential: FIRAuthCredential) {
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+      
 			PKHUD.sharedHUD.hide()
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
 			if error != nil {
