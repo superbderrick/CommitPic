@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FirebaseDatabase
+import Alamofire
 import OAuthSwift
 import PKHUD
 import SwiftyJSON
@@ -26,6 +28,11 @@ class LoginViewController: OAuthViewController {
 	
   override func viewDidLoad() {
     super.viewDidLoad()
+    var ref: FIRDatabaseReference!
+    
+    ref = FIRDatabase.database().reference()
+    
+    
     
     if FIRAuth.auth()?.currentUser != nil {
       
@@ -113,6 +120,9 @@ extension LoginViewController {
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
       
+      
+      
+      
 			PKHUD.sharedHUD.hide()
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
 			if error != nil {
@@ -120,6 +130,31 @@ extension LoginViewController {
 			}
 		}
 	}
+  
+  func getUserName(url:String) {
+    Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+      if response.data != nil {
+        
+        let json = JSON(response.data!)
+        
+        if let loginName = json["login"].string {
+          print(loginName)
+          
+          PKHUD.sharedHUD.hide()
+          self.performSegue(withIdentifier: "authSuccess", sender: self)
+        }
+        
+      }
+    }
+    
+				
+    
+				
+    
+    
+    
+    
+  }
 	
 	
 }

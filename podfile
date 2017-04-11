@@ -22,7 +22,7 @@ target "CommitPic" do
   #Util
   pod "PromiseKit", "~> 4.0"
   pod 'SwiftyJSON'
-  pod 'RealmSwift'
+  #pod 'RealmSwift'
   
 end
 
