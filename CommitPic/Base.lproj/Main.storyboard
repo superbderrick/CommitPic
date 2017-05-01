@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EfH-pe-pIF">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -306,12 +306,43 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="rootViewController" id="xfX-bJ-X4b"/>
+                        <segue destination="dai-pT-JsF" kind="relationship" relationship="rootViewController" id="SB9-jM-89l"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aAT-0W-juS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1712.8" y="752.47376311844084"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="ibN-bI-DvN">
+            <objects>
+                <viewController id="dai-pT-JsF" customClass="CameraViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oaB-1b-Ou1"/>
+                        <viewControllerLayoutGuide type="bottom" id="iSH-Nc-vIA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mYc-C5-CkU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAi-xD-TPm">
+                                <rect key="frame" x="157" y="283" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VAi-xD-TPm" firstAttribute="centerY" secondItem="mYc-C5-CkU" secondAttribute="centerY" id="HQU-pG-aed"/>
+                            <constraint firstItem="VAi-xD-TPm" firstAttribute="centerX" secondItem="mYc-C5-CkU" secondAttribute="centerX" id="LaX-7c-xRu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9Ny-30-ost"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0eD-B9-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2476" y="752"/>
         </scene>
     </scenes>
     <resources>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4900274A1EB7009F001632AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 490027491EB7009F001632AE /* GoogleService-Info.plist */; };
+		4900274C1EB70359001632AE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900274B1EB70359001632AE /* CameraViewController.swift */; };
 		490F0E311E98A19700C2A672 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F0E301E98A19700C2A672 /* StringUtil.swift */; };
 		4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4929C8311E90B26600C863C0 /* TimeCalculator.swift */; };
 		492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED6301E827D350014290A /* DailyCommitViewController.swift */; };
@@ -19,7 +21,6 @@
 		495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495807241E815147003DDB4C /* GCDBlackBox.swift */; };
 		4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972F0161E7E203900139332 /* MainTabbarController.swift */; };
 		498AB4C11E89E3B800D228EC /* CommitMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AB4C01E89E3B800D228EC /* CommitMaker.swift */; };
-		49AB5C461E9CF45A00C9CA60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49AB5C451E9CF45A00C9CA60 /* GoogleService-Info.plist */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
 		49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490027491EB7009F001632AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4900274B1EB70359001632AE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = viewcontrollers/CameraViewController.swift; sourceTree = "<group>"; };
 		490F0E301E98A19700C2A672 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		4929C8311E90B26600C863C0 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCalculator.swift; path = helper/TimeCalculator.swift; sourceTree = "<group>"; };
 		492ED6301E827D350014290A /* DailyCommitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DailyCommitViewController.swift; path = viewcontrollers/DailyCommitViewController.swift; sourceTree = "<group>"; };
@@ -44,7 +47,6 @@
 		495807241E815147003DDB4C /* GCDBlackBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GCDBlackBox.swift; path = util/GCDBlackBox.swift; sourceTree = "<group>"; };
 		4972F0161E7E203900139332 /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = viewcontrollers/MainTabbarController.swift; sourceTree = "<group>"; };
 		498AB4C01E89E3B800D228EC /* CommitMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitMaker.swift; path = networks/CommitMaker.swift; sourceTree = "<group>"; };
-		49AB5C451E9CF45A00C9CA60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
 		49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = viewcontrollers/ActivityViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +83,6 @@
 		493261521E7A43350080795D = {
 			isa = PBXGroup;
 			children = (
-				49AB5C451E9CF45A00C9CA60 /* GoogleService-Info.plist */,
 				4932615D1E7A43350080795D /* CommitPic */,
 				4932615C1E7A43350080795D /* Products */,
 				91691F9B27238DEA7D1C386A /* Pods */,
@@ -100,6 +101,7 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				490027491EB7009F001632AE /* GoogleService-Info.plist */,
 				4929C8301E90B1E100C863C0 /* Helper */,
 				49CAEB221E849A340061FDCD /* UI */,
 				49CAEB211E849A0A0061FDCD /* Model */,
@@ -157,6 +159,7 @@
 				4972F0161E7E203900139332 /* MainTabbarController.swift */,
 				492ED6301E827D350014290A /* DailyCommitViewController.swift */,
 				49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */,
+				4900274B1EB70359001632AE /* CameraViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -245,7 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */,
-				49AB5C461E9CF45A00C9CA60 /* GoogleService-Info.plist in Resources */,
+				4900274A1EB7009F001632AE /* GoogleService-Info.plist in Resources */,
 				493261661E7A43350080795D /* Assets.xcassets in Resources */,
 				493261641E7A43350080795D /* Main.storyboard in Resources */,
 			);
@@ -364,6 +367,7 @@
 				492ED6311E827D350014290A /* DailyCommitViewController.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 				495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */,
+				4900274C1EB70359001632AE /* CameraViewController.swift in Sources */,
 				4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */,
 				49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */,
 			);

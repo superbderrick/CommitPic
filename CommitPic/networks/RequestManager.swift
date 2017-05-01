@@ -155,7 +155,8 @@ class RequestManager {
             fulfill(commitArray)
             print("Done first Request")
           } else {
-            reject(response.error!)
+            fulfill(commitArray)
+            //reject(response.error!)
           }
         }
         
