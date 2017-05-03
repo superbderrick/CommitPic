@@ -14,6 +14,7 @@ import Alamofire
 import OAuthSwift
 import PKHUD
 import SwiftyJSON
+import CDAlertView
 
 class LoginViewController: OAuthViewController {
   @IBOutlet weak var loginButton: UIButton!
@@ -29,12 +30,22 @@ class LoginViewController: OAuthViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // check previous user trace
-    self.checkPreviousTrace()
+    checkPreviousTrace()
     
   }
 	
   @IBAction func clickedSkip(_ sender: Any) {
-    print("skip")
+      showSkipAlertView()
+  }
+  private func showSkipAlertView() {
+    let guideString = ConstantStrings.SKIP_STRINGS.SKIP_FIRST_GUIDE + ConstantStrings.SKIP_STRINGS.SKIP_SECOND_GUIDE
+    let alert = CDAlertView(title:ConstantStrings.SKIP_STRINGS.TITLE, message: guideString, type: .notification)
+    
+    let nevermindAction = CDAlertViewAction(title: "Cancel")
+    alert.add(action: nevermindAction)
+    let doneAction = CDAlertViewAction(title: "Don't need it")
+    alert.add(action: doneAction)
+    alert.show()
   }
   
   private func checkPreviousTrace() {

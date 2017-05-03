@@ -1,0 +1,6 @@
+framework module EZLoadingActivity {
+  umbrella header "EZLoadingActivity-umbrella.h"
+
+  export *
+  module * { export * }
+}
