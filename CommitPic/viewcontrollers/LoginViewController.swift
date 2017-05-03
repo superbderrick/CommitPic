@@ -28,12 +28,6 @@ class LoginViewController: OAuthViewController {
 	
   override func viewDidLoad() {
     super.viewDidLoad()
-    var ref: FIRDatabaseReference!
-    
-    ref = FIRDatabase.database().reference()
-    
-    
-    
     if FIRAuth.auth()?.currentUser != nil {
       
       FIRAuth.auth()?.currentUser?.getTokenWithCompletion() { (token, error) in
@@ -79,22 +73,14 @@ class LoginViewController: OAuthViewController {
         let json = JSON(response!.data)
         print(json)
 
-        if let id = json["login"].dictionary {
-            print(json)
-//          total = (statDic["total"]?.int)!
-//          additions = (statDic["additions"]?.int)!
-//          deletions = (statDic["deletions"]?.int)!
-        }
-        
+//        if let id = json["login"].dictionary {
+//            print(json)
+////          total = (statDic["total"]?.int)!
+////          additions = (statDic["additions"]?.int)!
+////          deletions = (statDic["deletions"]?.int)!
+//        }
+//        
       
-//        id jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&connectionError];
-//        //            NSLog(@"jsonDict========= %@", jsonDict);
-//        
-//        APPDELEGATE.engine = [[UAGithubEngine alloc] initWithUsername:[((NSDictionary*)jsonDict) objectForKey:@"login"] password:txtfUserPassword.text withReachability:YES];
-//        
-//        
-//        APPDELEGATE.authUsername = [((NSDictionary*)jsonDict) objectForKey:@"login"];
-        
         
         
 			let accessToken = credential.oauthToken
