@@ -28,6 +28,16 @@ class LoginViewController: OAuthViewController {
 	
   override func viewDidLoad() {
     super.viewDidLoad()
+    // check previous user trace
+    self.checkPreviousTrace()
+    
+  }
+	
+  @IBAction func clickedSkip(_ sender: Any) {
+    print("skip")
+  }
+  
+  private func checkPreviousTrace() {
     if FIRAuth.auth()?.currentUser != nil {
       
       FIRAuth.auth()?.currentUser?.getTokenWithCompletion() { (token, error) in
@@ -37,16 +47,14 @@ class LoginViewController: OAuthViewController {
           NSLog("Unable to get firebase token: \(error!.localizedDescription)")
         }
       }
-      		performUIUpdatesOnMain {
-            
-      			 self.performSegue(withIdentifier: "authSuccess", sender: self)
-      		}
+      performUIUpdatesOnMain {
+        
+        self.performSegue(withIdentifier: "authSuccess", sender: self)
+      }
     } else {
       print("Derrick Noting previous trace")
     }
   }
-	
-  
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated);
   }
@@ -105,10 +113,6 @@ extension LoginViewController {
 	func authWithFirebase(credential: FIRAuthCredential) {
 		
 		FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-      
-      
-      
-      
 			PKHUD.sharedHUD.hide()
 			self.performSegue(withIdentifier: "authSuccess", sender: self)
 			if error != nil {
@@ -132,15 +136,5 @@ extension LoginViewController {
         
       }
     }
-    
-				
-    
-				
-    
-    
-    
-    
   }
-	
-	
 }
