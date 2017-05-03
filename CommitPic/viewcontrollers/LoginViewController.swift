@@ -40,13 +40,27 @@ class LoginViewController: OAuthViewController {
   private func showSkipAlertView() {
     let guideString = ConstantStrings.SKIP_STRINGS.SKIP_FIRST_GUIDE + ConstantStrings.SKIP_STRINGS.SKIP_SECOND_GUIDE
     let alert = CDAlertView(title:ConstantStrings.SKIP_STRINGS.TITLE, message: guideString, type: .notification)
-    
+   
     let nevermindAction = CDAlertViewAction(title: "Cancel")
     alert.add(action: nevermindAction)
-    let doneAction = CDAlertViewAction(title: "Don't need it")
+    let doneAction = CDAlertViewAction(title: "Don't need it" , font: nil , textColor: nil , backgroundColor: nil , handler: {
+      (doneAction) in
+        print("finally")
+      })
+    
     alert.add(action: doneAction)
     alert.show()
   }
+  
+    
+  
+
+  
+  
+  func test(_ center: inout CGPoint, _ transform: inout CGAffineTransform, _ alpha: inout CGFloat) {
+    print("test")
+  }
+  
   
   private func checkPreviousTrace() {
     if FIRAuth.auth()?.currentUser != nil {
