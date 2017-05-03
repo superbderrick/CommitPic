@@ -47,6 +47,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.1.7):
     - PromiseKit/CorePromise
+  - Swift-Prompts (1.0.0)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - OAuthSwift (~> 1.1.0)
   - PKHUD (~> 4.0)
   - PromiseKit (~> 4.0)
+  - Swift-Prompts (~> 1.0.0)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
@@ -74,8 +76,9 @@ SPEC CHECKSUMS:
   OAuthSwift: 6e3a103b3e5639411769cc7e199ec7e14bd1547f
   PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
   PromiseKit: 779f2e41faf62d854e7593026ddbcb0bb5c5002d
+  Swift-Prompts: 6e4999e26019d4e63996da154e2cd1759d546fbc
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: f64553bf129555b3a201244478c031d12a2508f1
+PODFILE CHECKSUM: 3adeb243529b36c4387e3c7928808b777ae66130
 
 COCOAPODS: 1.2.0

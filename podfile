@@ -18,6 +18,7 @@ target "CommitPic" do
   #UI
   pod 'PKHUD', '~> 4.0'
   pod 'EZLoadingActivity' 
+  pod 'Swift-Prompts', '~> 1.0.0'
   
   #Util
   pod "PromiseKit", "~> 4.0"
