@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYn-Ag-0gK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYn-Ag-0gK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,10 +68,10 @@
             </objects>
             <point key="canvasLocation" x="796" y="109.29535232383809"/>
         </scene>
-        <!--DailyCommit-->
+        <!--Profil-->
         <scene sceneID="IzF-JF-XSS">
             <objects>
-                <viewController id="Eum-6R-Zhc" userLabel="DailyCommit" customClass="DailyCommitViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eum-6R-Zhc" userLabel="Profil" customClass="ProfilController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="URN-Rq-Ltr"/>
                         <viewControllerLayoutGuide type="bottom" id="CxC-9V-k4g"/>
@@ -96,6 +96,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic_person_white" id="2Y9-LU-adE"/>
                     <navigationItem key="navigationItem" id="h2d-nJ-THS"/>
                     <connections>
                         <outlet property="currentStatusButton" destination="q3Q-jA-TCf" id="dzL-J5-tFf"/>
@@ -105,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uhv-Zk-RD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="375" y="827"/>
+            <point key="canvasLocation" x="943" y="838"/>
         </scene>
         <!--ActivityRecord-->
         <scene sceneID="rSr-3k-dqv">
@@ -120,21 +121,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uwP-6F-MDp" userLabel="daily,weekly,monthly">
-                                <rect key="frame" x="-2" y="20" width="379" height="29"/>
+                                <rect key="frame" x="-2" y="64" width="379" height="29"/>
                                 <segments>
                                     <segment title="Daily"/>
                                     <segment title="Weekly"/>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oqQ-3e-AWF">
-                                <rect key="frame" x="0.0" y="56" width="375" height="562"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityViewCell" rowHeight="154" id="nRD-4f-lLm" customClass="ActivityTableViewCell" customModule="CommitPic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRD-4f-lLm" id="oJP-Jr-k7l">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="153.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-sJ-1uz">
@@ -151,7 +152,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="27 Mar , 21:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgV-fw-AWe" userLabel="pushtime">
-                                                    <rect key="frame" x="230" y="13" width="79" height="15"/>
+                                                    <rect key="frame" x="285" y="13" width="79" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.72033870220184326" green="0.73901361227035522" blue="0.71682095527648926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -273,7 +274,7 @@
                             <constraint firstItem="xQr-gK-ikQ" firstAttribute="top" secondItem="oqQ-3e-AWF" secondAttribute="bottom" id="xgj-7r-3Qb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="ic_settings_applications_36pt" id="RwO-5t-xlI"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_desktop_mac_white" id="RwO-5t-xlI"/>
                     <connections>
                         <outlet property="activityTableView" destination="oqQ-3e-AWF" id="sDG-oH-Kjv"/>
                         <outlet property="dateSegment" destination="uwP-6F-MDp" id="jCs-OV-o7a"/>
@@ -281,7 +282,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A93-jY-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2652" y="98.50074962518741"/>
+            <point key="canvasLocation" x="2487" y="838"/>
+        </scene>
+        <!--CameraView Controller-->
+        <scene sceneID="Fg0-cR-oUc">
+            <objects>
+                <viewController id="QWA-xF-kuf" userLabel="CameraView Controller" customClass="CameraViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SAA-IY-msT"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Fp-Yc-czN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mdO-Lz-xUk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="ic_photo_camera_white" id="uTh-sA-Tht"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bim-bb-cxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1738" y="838"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y2E-xO-tuT">
@@ -291,66 +311,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="0.95593848780000001" blue="0.98790759579999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EfH-pe-pIF" kind="relationship" relationship="viewControllers" id="c9a-4P-DZb"/>
-                        <segue destination="weS-09-YEM" kind="relationship" relationship="viewControllers" id="zdL-ad-cam"/>
+                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="viewControllers" id="65n-GE-6RI"/>
+                        <segue destination="QWA-xF-kuf" kind="relationship" relationship="viewControllers" id="PI6-jw-IsB"/>
+                        <segue destination="weS-09-YEM" kind="relationship" relationship="viewControllers" id="hBg-ht-wLU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4qe-Ol-Yam" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1687.2" y="108.39580209895054"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mag-Wt-Jma">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="EfH-pe-pIF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_local_activity_36pt" id="rXz-v2-1NZ"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4em-9u-ofC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Eum-6R-Zhc" kind="relationship" relationship="rootViewController" id="V05-YL-RSQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aAT-0W-juS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2652" y="752.47376311844084"/>
-        </scene>
-        <!--Camera View Controller-->
-        <scene sceneID="ibN-bI-DvN">
-            <objects>
-                <viewController id="dai-pT-JsF" customClass="CameraViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oaB-1b-Ou1"/>
-                        <viewControllerLayoutGuide type="bottom" id="iSH-Nc-vIA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mYc-C5-CkU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAi-xD-TPm">
-                                <rect key="frame" x="157" y="283" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VAi-xD-TPm" firstAttribute="centerY" secondItem="mYc-C5-CkU" secondAttribute="centerY" id="HQU-pG-aed"/>
-                            <constraint firstItem="VAi-xD-TPm" firstAttribute="centerX" secondItem="mYc-C5-CkU" secondAttribute="centerX" id="LaX-7c-xRu"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="9Ny-30-ost"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0eD-B9-gig" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3415.1999999999998" y="751.57421289355329"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bsd-Qs-10p">
@@ -373,8 +345,9 @@
     </scenes>
     <resources>
         <image name="Octocat" width="800" height="665"/>
-        <image name="ic_local_activity_36pt" width="36" height="36"/>
-        <image name="ic_settings_applications_36pt" width="36" height="36"/>
+        <image name="ic_desktop_mac_white" width="24" height="24"/>
+        <image name="ic_person_white" width="24" height="24"/>
+        <image name="ic_photo_camera_white" width="24" height="24"/>
         <image name="login" width="735" height="130"/>
     </resources>
 </document>

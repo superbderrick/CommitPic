@@ -29,7 +29,7 @@ class LoginViewController: OAuthViewController {
 	
   override func viewDidLoad() {
     super.viewDidLoad()
-    // check previous user trace
+	
     checkPreviousTrace()
     
   }
@@ -43,23 +43,25 @@ class LoginViewController: OAuthViewController {
    
     let nevermindAction = CDAlertViewAction(title: "Cancel")
     alert.add(action: nevermindAction)
-    let doneAction = CDAlertViewAction(title: "Don't need it" , font: nil , textColor: nil , backgroundColor: nil , handler: {
-      (doneAction) in
-        print("finally")
-      })
-    
+	
+	let doneAction = CDAlertViewAction(title: "Don't need it" , font: nil , textColor: nil , backgroundColor: nil , handler: {
+		(doneAction) in
+			self.moveToView()
+	})
+	
     alert.add(action: doneAction)
     alert.show()
   }
   
     
-  
-
-  
-  
-  func test(_ center: inout CGPoint, _ transform: inout CGAffineTransform, _ alpha: inout CGFloat) {
-    print("test")
-  }
+	
+	func moveToView() {
+		performUIUpdatesOnMain {
+			self.performSegue(withIdentifier: "authSuccess", sender: self)
+		}
+	}
+	
+	
   
   
   private func checkPreviousTrace() {
@@ -72,10 +74,7 @@ class LoginViewController: OAuthViewController {
           NSLog("Unable to get firebase token: \(error!.localizedDescription)")
         }
       }
-      performUIUpdatesOnMain {
-        
-        self.performSegue(withIdentifier: "authSuccess", sender: self)
-      }
+		moveToView()
     } else {
       print("Derrick Noting previous trace")
     }

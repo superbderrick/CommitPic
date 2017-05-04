@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
-class DailyCommitViewController: UIViewController {
+class ProfilController: UIViewController {
   @IBOutlet weak var logoutButton: UIButton!
 	@IBOutlet weak var currentStatusButton: UIButton!
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,26 +20,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="G2A-hr-bHe">
-                                <rect key="frame" x="37.5" y="83" width="300" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="4OJ-Xf-ziS"/>
-                                    <constraint firstAttribute="height" constant="200" id="bcX-Sj-n6d"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash" translatesAutoresizingMaskIntoConstraints="NO" id="USZ-iC-OGw">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit PIc" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Df-Yg-JVL">
-                                <rect key="frame" x="100" y="333" width="175" height="38.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
-                                <color key="textColor" red="0.24186014789999999" green="1" blue="0.33344696820000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Commit Pic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4I-rI-PBF">
+                                <rect key="frame" x="87.5" y="236" width="200" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2he-OJ-i2S"/>
+                                    <constraint firstAttribute="width" constant="200" id="Imf-7Q-LOK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.92992568019999999" green="0.25014421713381857" blue="0.4661139735318931" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.3065495466321243" green="0.3065495466321243" blue="0.3065495466321243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Df-Yg-JVL" firstAttribute="top" secondItem="G2A-hr-bHe" secondAttribute="bottom" constant="50" id="6Of-L9-c2z"/>
-                            <constraint firstItem="G2A-hr-bHe" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="63" id="Q5a-7Q-NsN"/>
-                            <constraint firstItem="9Df-Yg-JVL" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="gEA-45-fa5"/>
-                            <constraint firstItem="G2A-hr-bHe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oCe-6t-DfN"/>
+                            <constraint firstItem="C4I-rI-PBF" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-80" id="4pj-L6-0YY"/>
+                            <constraint firstItem="C4I-rI-PBF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KOS-0B-IZJ"/>
+                            <constraint firstAttribute="trailing" secondItem="USZ-iC-OGw" secondAttribute="trailing" id="isV-7X-pVp"/>
+                            <constraint firstItem="USZ-iC-OGw" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="jdb-6b-sta"/>
+                            <constraint firstItem="USZ-iC-OGw" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="q6s-cC-bUT"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="USZ-iC-OGw" secondAttribute="bottom" id="scW-0F-6zV"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -49,6 +50,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Octocat" width="800" height="665"/>
+        <image name="splash" width="960" height="640"/>
     </resources>
 </document>
