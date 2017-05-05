@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4900274A1EB7009F001632AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 490027491EB7009F001632AE /* GoogleService-Info.plist */; };
-		4900274C1EB70359001632AE /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4900274B1EB70359001632AE /* CameraViewController.swift */; };
 		490F0E311E98A19700C2A672 /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F0E301E98A19700C2A672 /* StringUtil.swift */; };
 		4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4929C8311E90B26600C863C0 /* TimeCalculator.swift */; };
 		492ED6311E827D350014290A /* ProfilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492ED6301E827D350014290A /* ProfilController.swift */; };
@@ -23,6 +22,20 @@
 		498AB4C11E89E3B800D228EC /* CommitMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498AB4C01E89E3B800D228EC /* CommitMaker.swift */; };
 		49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */; };
 		49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B328B21E7EC70300DB2AE0 /* Constant.swift */; };
+		49B97A701EBC399A00BB99F1 /* FSAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A631EBC399A00BB99F1 /* FSAlbumView.swift */; };
+		49B97A711EBC399A00BB99F1 /* FSAlbumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A641EBC399A00BB99F1 /* FSAlbumView.xib */; };
+		49B97A721EBC399A00BB99F1 /* FSAlbumViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A651EBC399A00BB99F1 /* FSAlbumViewCell.swift */; };
+		49B97A731EBC399A00BB99F1 /* FSAlbumViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A661EBC399A00BB99F1 /* FSAlbumViewCell.xib */; };
+		49B97A741EBC399A00BB99F1 /* FSCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A671EBC399A00BB99F1 /* FSCameraView.swift */; };
+		49B97A751EBC399A00BB99F1 /* FSCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A681EBC399A00BB99F1 /* FSCameraView.xib */; };
+		49B97A761EBC399A00BB99F1 /* FSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A691EBC399A00BB99F1 /* FSConstants.swift */; };
+		49B97A771EBC399A00BB99F1 /* FSImageCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A6A1EBC399A00BB99F1 /* FSImageCropView.swift */; };
+		49B97A781EBC399A00BB99F1 /* FSVideoCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A6B1EBC399A00BB99F1 /* FSVideoCameraView.swift */; };
+		49B97A791EBC399A00BB99F1 /* FSVideoCameraView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A6C1EBC399A00BB99F1 /* FSVideoCameraView.xib */; };
+		49B97A7A1EBC399A00BB99F1 /* FusumaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A6D1EBC399A00BB99F1 /* FusumaViewController.swift */; };
+		49B97A7B1EBC399A00BB99F1 /* FusumaViewController.swift.orig in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A6E1EBC399A00BB99F1 /* FusumaViewController.swift.orig */; };
+		49B97A7C1EBC399A00BB99F1 /* FusumaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49B97A6F1EBC399A00BB99F1 /* FusumaViewController.xib */; };
+		49B97A7E1EBC44DA00BB99F1 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B97A7D1EBC44DA00BB99F1 /* CameraViewController.swift */; };
 		49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */; };
 		49C7EFC11EB9C9C90083919B /* ConstantStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C7EFC01EB9C9C90083919B /* ConstantStrings.swift */; };
 		49CAEB241E849A5E0061FDCD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CAEB231E849A5E0061FDCD /* ActivityTableViewCell.swift */; };
@@ -33,7 +46,6 @@
 
 /* Begin PBXFileReference section */
 		490027491EB7009F001632AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4900274B1EB70359001632AE /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = viewcontrollers/CameraViewController.swift; sourceTree = "<group>"; };
 		490F0E301E98A19700C2A672 /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		4929C8311E90B26600C863C0 /* TimeCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimeCalculator.swift; path = helper/TimeCalculator.swift; sourceTree = "<group>"; };
 		492ED6301E827D350014290A /* ProfilController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfilController.swift; path = viewcontrollers/ProfilController.swift; sourceTree = "<group>"; };
@@ -50,6 +62,20 @@
 		498AB4C01E89E3B800D228EC /* CommitMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommitMaker.swift; path = networks/CommitMaker.swift; sourceTree = "<group>"; };
 		49B328B01E7EC56F00DB2AE0 /* GitHubOAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GitHubOAuth.swift; path = networks/GitHubOAuth.swift; sourceTree = "<group>"; };
 		49B328B21E7EC70300DB2AE0 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = networks/Constant.swift; sourceTree = "<group>"; };
+		49B97A631EBC399A00BB99F1 /* FSAlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlbumView.swift; sourceTree = "<group>"; };
+		49B97A641EBC399A00BB99F1 /* FSAlbumView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSAlbumView.xib; sourceTree = "<group>"; };
+		49B97A651EBC399A00BB99F1 /* FSAlbumViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSAlbumViewCell.swift; sourceTree = "<group>"; };
+		49B97A661EBC399A00BB99F1 /* FSAlbumViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSAlbumViewCell.xib; sourceTree = "<group>"; };
+		49B97A671EBC399A00BB99F1 /* FSCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSCameraView.swift; sourceTree = "<group>"; };
+		49B97A681EBC399A00BB99F1 /* FSCameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSCameraView.xib; sourceTree = "<group>"; };
+		49B97A691EBC399A00BB99F1 /* FSConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSConstants.swift; sourceTree = "<group>"; };
+		49B97A6A1EBC399A00BB99F1 /* FSImageCropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSImageCropView.swift; sourceTree = "<group>"; };
+		49B97A6B1EBC399A00BB99F1 /* FSVideoCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSVideoCameraView.swift; sourceTree = "<group>"; };
+		49B97A6C1EBC399A00BB99F1 /* FSVideoCameraView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSVideoCameraView.xib; sourceTree = "<group>"; };
+		49B97A6D1EBC399A00BB99F1 /* FusumaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FusumaViewController.swift; sourceTree = "<group>"; };
+		49B97A6E1EBC399A00BB99F1 /* FusumaViewController.swift.orig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FusumaViewController.swift.orig; sourceTree = "<group>"; };
+		49B97A6F1EBC399A00BB99F1 /* FusumaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FusumaViewController.xib; sourceTree = "<group>"; };
+		49B97A7D1EBC44DA00BB99F1 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityViewController.swift; path = viewcontrollers/ActivityViewController.swift; sourceTree = "<group>"; };
 		49C7EFC01EB9C9C90083919B /* ConstantStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstantStrings.swift; sourceTree = "<group>"; };
 		49CAEB231E849A5E0061FDCD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
@@ -104,6 +130,7 @@
 		4932615D1E7A43350080795D /* CommitPic */ = {
 			isa = PBXGroup;
 			children = (
+				49B97A621EBC396B00BB99F1 /* Fusuma */,
 				490027491EB7009F001632AE /* GoogleService-Info.plist */,
 				4929C8301E90B1E100C863C0 /* Helper */,
 				49CAEB221E849A340061FDCD /* UI */,
@@ -138,6 +165,26 @@
 			name = Networks;
 			sourceTree = "<group>";
 		};
+		49B97A621EBC396B00BB99F1 /* Fusuma */ = {
+			isa = PBXGroup;
+			children = (
+				49B97A631EBC399A00BB99F1 /* FSAlbumView.swift */,
+				49B97A641EBC399A00BB99F1 /* FSAlbumView.xib */,
+				49B97A651EBC399A00BB99F1 /* FSAlbumViewCell.swift */,
+				49B97A661EBC399A00BB99F1 /* FSAlbumViewCell.xib */,
+				49B97A671EBC399A00BB99F1 /* FSCameraView.swift */,
+				49B97A681EBC399A00BB99F1 /* FSCameraView.xib */,
+				49B97A691EBC399A00BB99F1 /* FSConstants.swift */,
+				49B97A6A1EBC399A00BB99F1 /* FSImageCropView.swift */,
+				49B97A6B1EBC399A00BB99F1 /* FSVideoCameraView.swift */,
+				49B97A6C1EBC399A00BB99F1 /* FSVideoCameraView.xib */,
+				49B97A6D1EBC399A00BB99F1 /* FusumaViewController.swift */,
+				49B97A6E1EBC399A00BB99F1 /* FusumaViewController.swift.orig */,
+				49B97A6F1EBC399A00BB99F1 /* FusumaViewController.xib */,
+			);
+			name = Fusuma;
+			sourceTree = "<group>";
+		};
 		49CAEB211E849A0A0061FDCD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,12 +204,12 @@
 		49DAF5DB1E7D899A007CCDEB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				49B97A7D1EBC44DA00BB99F1 /* CameraViewController.swift */,
 				493261601E7A43350080795D /* WebViewController.swift */,
 				49DAF5DC1E7D89BF007CCDEB /* LoginViewController.swift */,
 				4972F0161E7E203900139332 /* MainTabbarController.swift */,
 				492ED6301E827D350014290A /* ProfilController.swift */,
 				49BB51791E88FE2F008F8D98 /* ActivityViewController.swift */,
-				4900274B1EB70359001632AE /* CameraViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -249,10 +296,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49B97A711EBC399A00BB99F1 /* FSAlbumView.xib in Resources */,
+				49B97A7B1EBC399A00BB99F1 /* FusumaViewController.swift.orig in Resources */,
 				493261691E7A43350080795D /* LaunchScreen.storyboard in Resources */,
+				49B97A791EBC399A00BB99F1 /* FSVideoCameraView.xib in Resources */,
+				49B97A751EBC399A00BB99F1 /* FSCameraView.xib in Resources */,
 				4900274A1EB7009F001632AE /* GoogleService-Info.plist in Resources */,
+				49B97A731EBC399A00BB99F1 /* FSAlbumViewCell.xib in Resources */,
 				493261661E7A43350080795D /* Assets.xcassets in Resources */,
 				493261641E7A43350080795D /* Main.storyboard in Resources */,
+				49B97A7C1EBC399A00BB99F1 /* FusumaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,16 +415,23 @@
 				4957518F1E8E11B600077F34 /* Commit.swift in Sources */,
 				49DAF5DD1E7D89BF007CCDEB /* LoginViewController.swift in Sources */,
 				49CAEB241E849A5E0061FDCD /* ActivityTableViewCell.swift in Sources */,
+				49B97A741EBC399A00BB99F1 /* FSCameraView.swift in Sources */,
 				493261611E7A43350080795D /* WebViewController.swift in Sources */,
+				49B97A701EBC399A00BB99F1 /* FSAlbumView.swift in Sources */,
+				49B97A721EBC399A00BB99F1 /* FSAlbumViewCell.swift in Sources */,
 				49B328B11E7EC56F00DB2AE0 /* GitHubOAuth.swift in Sources */,
 				498AB4C11E89E3B800D228EC /* CommitMaker.swift in Sources */,
 				4972F0171E7E203900139332 /* MainTabbarController.swift in Sources */,
+				49B97A771EBC399A00BB99F1 /* FSImageCropView.swift in Sources */,
 				49B328B31E7EC70300DB2AE0 /* Constant.swift in Sources */,
 				492ED6311E827D350014290A /* ProfilController.swift in Sources */,
+				49B97A7E1EBC44DA00BB99F1 /* CameraViewController.swift in Sources */,
 				4932615F1E7A43350080795D /* AppDelegate.swift in Sources */,
 				495807251E815147003DDB4C /* GCDBlackBox.swift in Sources */,
-				4900274C1EB70359001632AE /* CameraViewController.swift in Sources */,
 				4929C8321E90B26600C863C0 /* TimeCalculator.swift in Sources */,
+				49B97A761EBC399A00BB99F1 /* FSConstants.swift in Sources */,
+				49B97A7A1EBC399A00BB99F1 /* FusumaViewController.swift in Sources */,
+				49B97A781EBC399A00BB99F1 /* FSVideoCameraView.swift in Sources */,
 				49BB517A1E88FE2F008F8D98 /* ActivityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

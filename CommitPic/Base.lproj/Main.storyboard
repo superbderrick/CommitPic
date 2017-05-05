@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYn-Ag-0gK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gYn-Ag-0gK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -135,7 +135,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="154"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nRD-4f-lLm" id="oJP-Jr-k7l">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="154"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="153.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="JrW-sJ-1uz">
@@ -295,13 +295,70 @@
                     <view key="view" contentMode="scaleToFill" id="mdO-Lz-xUk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQL-DQ-Hsb" userLabel="show Button">
+                                <rect key="frame" x="121" y="524" width="132" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="132" id="V3e-7O-LUk"/>
+                                    <constraint firstAttribute="height" constant="44" id="Ymh-1Y-aFp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="showButtonPressed:" destination="QWA-xF-kuf" eventType="touchUpInside" id="FSi-gX-vZd"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dtB-Pq-cGu">
+                                <rect key="frame" x="37" y="114" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="Jmb-XX-UKw"/>
+                                    <constraint firstAttribute="width" constant="300" id="U18-X4-MHd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suB-cV-Zku" userLabel="file url label">
+                                <rect key="frame" x="166.5" y="414" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dtB-Pq-cGu" firstAttribute="top" secondItem="SAA-IY-msT" secondAttribute="bottom" constant="50" id="0ea-8b-AGB"/>
+                            <constraint firstItem="dtB-Pq-cGu" firstAttribute="centerX" secondItem="mdO-Lz-xUk" secondAttribute="centerX" id="5Rs-VE-buz"/>
+                            <constraint firstItem="GQL-DQ-Hsb" firstAttribute="centerX" secondItem="mdO-Lz-xUk" secondAttribute="centerX" id="NZt-Zc-Xlj"/>
+                            <constraint firstItem="suB-cV-Zku" firstAttribute="top" secondItem="dtB-Pq-cGu" secondAttribute="bottom" id="ZY4-pK-dA3"/>
+                            <constraint firstItem="suB-cV-Zku" firstAttribute="centerX" secondItem="mdO-Lz-xUk" secondAttribute="centerX" id="gcr-f8-nTJ"/>
+                            <constraint firstItem="0Fp-Yc-czN" firstAttribute="top" secondItem="GQL-DQ-Hsb" secondAttribute="bottom" constant="50" id="mQG-kP-Num"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_photo_camera_white" id="uTh-sA-Tht"/>
+                    <connections>
+                        <outlet property="fileUrlLabel" destination="suB-cV-Zku" id="N6t-fQ-bIO"/>
+                        <outlet property="imageView" destination="dtB-Pq-cGu" id="XdN-lE-aWo"/>
+                        <outlet property="showButton" destination="GQL-DQ-Hsb" id="vza-CS-mMX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bim-bb-cxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1738" y="838"/>
+        </scene>
+        <!--Fusuma View Controller-->
+        <scene sceneID="f7p-2H-Fu8">
+            <objects>
+                <viewController storyboardIdentifier="fusumaViewController" id="sEv-9F-TqP" customClass="FusumaViewController" customModule="CommitPic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wAD-7t-YEO"/>
+                        <viewControllerLayoutGuide type="bottom" id="92r-Aq-DxU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PDe-5r-sCB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zpg-XY-8ut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="1559"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y2E-xO-tuT">
