@@ -9,7 +9,7 @@ CommitPic is a photo application to share development records easily and freely 
     Alamofire    
  
 - UI :
-    PKHUD , EZLoadingActivity, CDAlertView
+    PKHUD , EZLoadingActivity, CDAlertView,Fusuma
 
 - Modern  :
 	PromiseKit , SwiftyJSON
