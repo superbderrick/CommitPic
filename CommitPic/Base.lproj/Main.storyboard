@@ -120,16 +120,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uwP-6F-MDp" userLabel="daily,weekly,monthly">
-                                <rect key="frame" x="-2" y="64" width="379" height="29"/>
-                                <segments>
-                                    <segment title="Daily"/>
-                                    <segment title="Weekly"/>
-                                </segments>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oqQ-3e-AWF">
-                                <rect key="frame" x="0.0" y="100" width="375" height="518"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ActivityViewCell" rowHeight="154" id="nRD-4f-lLm" customClass="ActivityTableViewCell" customModule="CommitPic" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="154"/>
@@ -148,58 +142,59 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Programming" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tx8-mH-z8k">
                                                     <rect key="frame" x="39" y="13" width="82" height="15"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                                    <color key="textColor" red="0.49831122159957886" green="0.76450282335281372" blue="0.24988675117492676" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="27 Mar , 21:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgV-fw-AWe" userLabel="pushtime">
                                                     <rect key="frame" x="285" y="13" width="79" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.72033870220184326" green="0.73901361227035522" blue="0.71682095527648926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday MORNING CODING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-7W-cbc" userLabel="detailLabel">
                                                     <rect key="frame" x="39" y="31" width="229" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="mfP-yU-Jvu" userLabel="time">
                                                     <rect key="frame" x="39" y="57" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:37:04" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U61-OO-Bn3" userLabel="reponame">
-                                                    <rect key="frame" x="67" y="57" width="91.5" height="20"/>
+                                                    <rect key="frame" x="67" y="57" width="92" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="hvf-MT-hhk" userLabel="language">
-                                                    <rect key="frame" x="193.5" y="58" width="20" height="20"/>
+                                                    <rect key="frame" x="194" y="58" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swfit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixM-Mc-vit" userLabel="languagelabel">
-                                                    <rect key="frame" x="221.5" y="58" width="91.5" height="20"/>
+                                                    <rect key="frame" x="222" y="58" width="92" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="TW6-56-8Zi" userLabel="commit">
                                                     <rect key="frame" x="39" y="91" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="118 Commit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pgl-kY-kaw" userLabel="addtion">
-                                                    <rect key="frame" x="67" y="90" width="91.5" height="20"/>
+                                                    <rect key="frame" x="67" y="90" width="92" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Octocat" translatesAutoresizingMaskIntoConstraints="NO" id="eMN-yC-vhU" userLabel="repo">
-                                                    <rect key="frame" x="193.5" y="92" width="20" height="20"/>
+                                                    <rect key="frame" x="194" y="92" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommitPic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fvd-zm-1cu" userLabel="delete">
-                                                    <rect key="frame" x="221.5" y="91" width="91.5" height="20"/>
+                                                    <rect key="frame" x="222" y="91" width="92" height="20"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="TW6-56-8Zi" firstAttribute="leading" secondItem="Hgj-7W-cbc" secondAttribute="leading" id="0dF-Wk-UVQ"/>
                                                 <constraint firstItem="ixM-Mc-vit" firstAttribute="leading" secondItem="hvf-MT-hhk" secondAttribute="trailing" constant="8" id="3TP-Rh-636"/>
@@ -250,7 +245,6 @@
                                                 <constraint firstItem="ixM-Mc-vit" firstAttribute="leading" secondItem="hvf-MT-hhk" secondAttribute="trailing" constant="8" id="yU8-h1-yci"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.16280755400657654" green="0.18205994367599487" blue="0.16764360666275024" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="addtion" destination="Pgl-kY-kaw" id="GGH-aU-nZp"/>
                                             <outlet property="delete" destination="Fvd-zm-1cu" id="eWY-YG-ZSM"/>
@@ -265,19 +259,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="uwP-6F-MDp" secondAttribute="trailing" constant="-18" id="7ac-qK-hft"/>
-                            <constraint firstAttribute="trailing" secondItem="oqQ-3e-AWF" secondAttribute="trailing" id="LpM-ms-Zgt"/>
-                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="top" secondItem="uwP-6F-MDp" secondAttribute="bottom" constant="8" symbolic="YES" id="Tdg-dB-nOu"/>
-                            <constraint firstItem="uwP-6F-MDp" firstAttribute="top" secondItem="zi8-UZ-omU" secondAttribute="bottom" id="bj7-SL-gT0"/>
-                            <constraint firstItem="uwP-6F-MDp" firstAttribute="leading" secondItem="C4w-uq-zb4" secondAttribute="leadingMargin" constant="-18" id="ojR-nL-FYh"/>
-                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="leading" secondItem="C4w-uq-zb4" secondAttribute="leading" id="owv-cB-Lde"/>
-                            <constraint firstItem="xQr-gK-ikQ" firstAttribute="top" secondItem="oqQ-3e-AWF" secondAttribute="bottom" id="xgj-7r-3Qb"/>
+                            <constraint firstItem="xQr-gK-ikQ" firstAttribute="top" secondItem="oqQ-3e-AWF" secondAttribute="bottom" id="00N-Fw-16g"/>
+                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="leading" secondItem="C4w-uq-zb4" secondAttribute="leading" id="9Xy-us-0mD"/>
+                            <constraint firstAttribute="trailing" secondItem="oqQ-3e-AWF" secondAttribute="trailing" id="dSY-KN-lk9"/>
+                            <constraint firstItem="oqQ-3e-AWF" firstAttribute="top" secondItem="C4w-uq-zb4" secondAttribute="top" id="tAw-dB-XK3"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_desktop_mac_white" id="RwO-5t-xlI"/>
                     <connections>
                         <outlet property="activityTableView" destination="oqQ-3e-AWF" id="sDG-oH-Kjv"/>
-                        <outlet property="dateSegment" destination="uwP-6F-MDp" id="jCs-OV-o7a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A93-jY-RDL" userLabel="First Responder" sceneMemberID="firstResponder"/>

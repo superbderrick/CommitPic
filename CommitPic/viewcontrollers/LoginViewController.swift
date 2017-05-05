@@ -36,6 +36,7 @@ class LoginViewController: OAuthViewController {
 	
   @IBAction func clickedSkip(_ sender: Any) {
       showSkipAlertView()
+         self.navigationController?.isNavigationBarHidden = true;
   }
   private func showSkipAlertView() {
     let guideString = ConstantStrings.SKIP_STRINGS.SKIP_FIRST_GUIDE + ConstantStrings.SKIP_STRINGS.SKIP_SECOND_GUIDE

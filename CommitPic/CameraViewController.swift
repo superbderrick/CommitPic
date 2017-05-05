@@ -16,11 +16,24 @@ class CameraViewController: UIViewController, FusumaDelegate {
     
     @IBOutlet weak var fileUrlLabel: UILabel!
 
+  override func viewWillAppear(_ animated: Bool) {
+   super.viewWillAppear(animated)
+  }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         showButton.layer.cornerRadius = 2.0
         self.fileUrlLabel.text = ""
+      let fusuma = FusumaViewController()
+      
+      //        fusumaCropImage = false
+      
+      fusuma.delegate = self
+      fusuma.cropHeightRatio = 0.9
+      fusuma.defaultMode = .camera
+      fusumaSavesImage = true
+      
+      self.present(fusuma, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,16 +43,16 @@ class CameraViewController: UIViewController, FusumaDelegate {
     
     @IBAction func showButtonPressed(_ sender: AnyObject) {
         // Show Fusuma
-        let fusuma = FusumaViewController()
-        
-        //        fusumaCropImage = false
-        
-        fusuma.delegate = self
-        fusuma.cropHeightRatio = 0.6
-        fusuma.defaultMode = .camera
-        fusumaSavesImage = true
-
-        self.present(fusuma, animated: true, completion: nil)
+//        let fusuma = FusumaViewController()
+//        
+//        //        fusumaCropImage = false
+//        
+//        fusuma.delegate = self
+//        fusuma.cropHeightRatio = 0.6
+//        fusuma.defaultMode = .camera
+//        fusumaSavesImage = true
+//
+//        self.present(fusuma, animated: true, completion: nil)
     }
     
     // MARK: FusumaDelegate Protocol
