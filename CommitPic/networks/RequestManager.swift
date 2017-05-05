@@ -116,6 +116,10 @@ class RequestManager {
     
   }
   
+  enum VendingMachineError: Error { case InvalidSelection
+    case InsufficientFunds(coinsNeeded: Int)
+    case OutOfStock }
+  
   func getCommitInformation() -> Promise<[Commit]> {
     let urlString = Constants.GitHub.BASE_API_URL + Constants.GithubRequestValue.TEST
     var commitArray = [Commit]()
@@ -155,8 +159,8 @@ class RequestManager {
             fulfill(commitArray)
             print("Done first Request")
           } else {
-            fulfill(commitArray)
-            //reject(response.error!)
+            
+            reject(VendingMachineError.InvalidSelection)
           }
         }
         

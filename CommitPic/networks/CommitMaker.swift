@@ -29,7 +29,7 @@ class CommitMaker{
       self.requestManager.getCommitData().then { commitArray in
         fulfill(commitArray)
         }.catch { error in
-          print(error)
+          reject(error)
       }
     }
   

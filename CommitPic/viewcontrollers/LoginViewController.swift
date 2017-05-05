@@ -61,9 +61,6 @@ class LoginViewController: OAuthViewController {
 		}
 	}
 	
-	
-  
-  
   private func checkPreviousTrace() {
     if FIRAuth.auth()?.currentUser != nil {
       
@@ -74,7 +71,7 @@ class LoginViewController: OAuthViewController {
           NSLog("Unable to get firebase token: \(error!.localizedDescription)")
         }
       }
-		moveToView()
+        moveToView()
     } else {
       print("Derrick Noting previous trace")
     }
